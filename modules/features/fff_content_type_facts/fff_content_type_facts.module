@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Content type (facts) feature.
+ */
+
+include_once('fff_content_type_facts.features.inc');
