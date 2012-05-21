@@ -5,3 +5,31 @@
  */
 
 include_once('fff_content_type_facts.features.inc');
+
+/**
+ * Defines a new feeds parser to parse globusdata calendar feeds.
+ *
+ * @return array $info
+ */
+function fff_content_type_facts_feeds_plugins() {
+  $info = array();
+  $info['Facts'] = array(
+    'name' => "Facts parser",
+    'description' => t('Parse facts XML'),
+    'handler' => array(
+      'parent' => 'FeedsParser',
+      'class' => 'FactsParser',
+      'file' => 'facts.class.inc',
+      'path' => drupal_get_path('module', 'fff_content_type_facts' ) . '/includes',
+    ),
+  );
+
+  return $info;
+}
+
+/**
+ * Make sure that the feed parser cache is cleared on module activation.
+ */
+function fff_content_type_facts_enable() {
+  cache_clear_all('plugins:feeds:plugins', 'cache');
+}
