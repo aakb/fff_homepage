@@ -1,7 +1,6 @@
 name = "Finurlig"
 description = "Finurlig fakta one page site"
 core = 7.x
-engine = phptemplate
 base theme = itkore
 
 ; REQUIRED CORE REGIONS
@@ -29,9 +28,9 @@ zones[footer] = Footer
 
 ; OPTIONAL STYLESHEETS
 
-css[global.css][name] = Your custom global styles
-css[global.css][description] = This file holds all the globally active custom CSS of your theme.
-css[global.css][options][weight] = 10
+css[finurlig.css][name] = 'Finurlig Fakta styles'
+css[finurlig.css][description] = 'This file holds all the custom CSS of your theme.'
+css[finurlig.css][options][weight] = '10'
 
 ; THEME SETTINGS
 
