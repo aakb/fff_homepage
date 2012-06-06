@@ -22,19 +22,27 @@ function finurlig_frontpage_steps_views_default_views() {
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['use_more_text'] = 'mere';
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['query']['options']['query_comment'] = FALSE;
   $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['exposed_form']['options']['reset_button_label'] = 'Gendan';
+  $handler->display->display_options['exposed_form']['options']['exposed_sorts_label'] = 'Sortér efter';
+  $handler->display->display_options['exposed_form']['options']['sort_asc_label'] = 'Stigende';
+  $handler->display->display_options['exposed_form']['options']['sort_desc_label'] = 'Faldende';
   $handler->display->display_options['pager']['type'] = 'full';
+  $handler->display->display_options['pager']['options']['expose']['items_per_page_label'] = 'Antal elementer';
+  $handler->display->display_options['pager']['options']['expose']['items_per_page_options_all_label'] = '- Alle -';
+  $handler->display->display_options['pager']['options']['expose']['offset_label'] = 'Forskydning';
   $handler->display->display_options['style_plugin'] = 'list';
   $handler->display->display_options['style_options']['row_class'] = 'step';
   $handler->display->display_options['style_options']['wrapper_class'] = '';
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['row_options']['hide_empty'] = 0;
   $handler->display->display_options['row_options']['default_field_elements'] = 0;
-  /* Relationship: Nodequeue: Queue */
+  /* Forbindelse: Nodekø: Kø */
   $handler->display->display_options['relationships']['nodequeue_rel']['id'] = 'nodequeue_rel';
   $handler->display->display_options['relationships']['nodequeue_rel']['table'] = 'node';
   $handler->display->display_options['relationships']['nodequeue_rel']['field'] = 'nodequeue_rel';
@@ -43,12 +51,13 @@ function finurlig_frontpage_steps_views_default_views() {
   $handler->display->display_options['relationships']['nodequeue_rel']['names'] = array(
     'frontpage_steps' => 'frontpage_steps',
   );
-  /* Field: Custom: Step text */
+  /* Felt: Custom: Step text */
   $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['table'] = 'views';
   $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['ui_name'] = 'Custom: Step text';
   $handler->display->display_options['fields']['nothing']['label'] = '';
+  $handler->display->display_options['fields']['nothing']['exclude'] = TRUE;
   $handler->display->display_options['fields']['nothing']['alter']['text'] = 'Step';
   $handler->display->display_options['fields']['nothing']['alter']['make_link'] = 0;
   $handler->display->display_options['fields']['nothing']['alter']['absolute'] = 0;
@@ -69,12 +78,13 @@ function finurlig_frontpage_steps_views_default_views() {
   $handler->display->display_options['fields']['nothing']['hide_empty'] = 0;
   $handler->display->display_options['fields']['nothing']['empty_zero'] = 0;
   $handler->display->display_options['fields']['nothing']['hide_alter_empty'] = 0;
-  /* Field: Global: counter */
+  /* Felt: Global: counter */
   $handler->display->display_options['fields']['counter']['id'] = 'counter';
   $handler->display->display_options['fields']['counter']['table'] = 'views';
   $handler->display->display_options['fields']['counter']['field'] = 'counter';
   $handler->display->display_options['fields']['counter']['ui_name'] = 'Global: counter';
   $handler->display->display_options['fields']['counter']['label'] = '';
+  $handler->display->display_options['fields']['counter']['exclude'] = TRUE;
   $handler->display->display_options['fields']['counter']['alter']['alter_text'] = 0;
   $handler->display->display_options['fields']['counter']['alter']['make_link'] = 0;
   $handler->display->display_options['fields']['counter']['alter']['absolute'] = 0;
@@ -96,7 +106,33 @@ function finurlig_frontpage_steps_views_default_views() {
   $handler->display->display_options['fields']['counter']['empty_zero'] = 0;
   $handler->display->display_options['fields']['counter']['hide_alter_empty'] = 1;
   $handler->display->display_options['fields']['counter']['counter_start'] = '1';
-  /* Field: Content: Title */
+  /* Felt: Custom: Step + Counter */
+  $handler->display->display_options['fields']['nothing_2']['id'] = 'nothing_2';
+  $handler->display->display_options['fields']['nothing_2']['table'] = 'views';
+  $handler->display->display_options['fields']['nothing_2']['field'] = 'nothing';
+  $handler->display->display_options['fields']['nothing_2']['ui_name'] = 'Custom: Step + Counter';
+  $handler->display->display_options['fields']['nothing_2']['label'] = '';
+  $handler->display->display_options['fields']['nothing_2']['alter']['text'] = '<span class="step-text">[nothing]</span><span class="counter">[counter]</span>';
+  $handler->display->display_options['fields']['nothing_2']['alter']['make_link'] = 0;
+  $handler->display->display_options['fields']['nothing_2']['alter']['absolute'] = 0;
+  $handler->display->display_options['fields']['nothing_2']['alter']['external'] = 0;
+  $handler->display->display_options['fields']['nothing_2']['alter']['replace_spaces'] = 0;
+  $handler->display->display_options['fields']['nothing_2']['alter']['trim_whitespace'] = 0;
+  $handler->display->display_options['fields']['nothing_2']['alter']['nl2br'] = 0;
+  $handler->display->display_options['fields']['nothing_2']['alter']['word_boundary'] = 1;
+  $handler->display->display_options['fields']['nothing_2']['alter']['ellipsis'] = 1;
+  $handler->display->display_options['fields']['nothing_2']['alter']['more_link'] = 0;
+  $handler->display->display_options['fields']['nothing_2']['alter']['strip_tags'] = 0;
+  $handler->display->display_options['fields']['nothing_2']['alter']['trim'] = 0;
+  $handler->display->display_options['fields']['nothing_2']['alter']['html'] = 0;
+  $handler->display->display_options['fields']['nothing_2']['element_type'] = 'div';
+  $handler->display->display_options['fields']['nothing_2']['element_class'] = 'step';
+  $handler->display->display_options['fields']['nothing_2']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['nothing_2']['element_default_classes'] = 0;
+  $handler->display->display_options['fields']['nothing_2']['hide_empty'] = 0;
+  $handler->display->display_options['fields']['nothing_2']['empty_zero'] = 0;
+  $handler->display->display_options['fields']['nothing_2']['hide_alter_empty'] = 0;
+  /* Felt: Indhold: Titel */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
@@ -122,7 +158,7 @@ function finurlig_frontpage_steps_views_default_views() {
   $handler->display->display_options['fields']['title']['empty_zero'] = 0;
   $handler->display->display_options['fields']['title']['hide_alter_empty'] = 1;
   $handler->display->display_options['fields']['title']['link_to_node'] = 0;
-  /* Field: Content: Indhold */
+  /* Felt: Indhold: Indhold */
   $handler->display->display_options['fields']['field_step_content']['id'] = 'field_step_content';
   $handler->display->display_options['fields']['field_step_content']['table'] = 'field_data_field_step_content';
   $handler->display->display_options['fields']['field_step_content']['field'] = 'field_step_content';
@@ -149,7 +185,7 @@ function finurlig_frontpage_steps_views_default_views() {
   $handler->display->display_options['fields']['field_step_content']['empty_zero'] = 0;
   $handler->display->display_options['fields']['field_step_content']['hide_alter_empty'] = 1;
   $handler->display->display_options['fields']['field_step_content']['field_api_classes'] = 0;
-  /* Field: Content: Ikon */
+  /* Felt: Indhold: Ikon */
   $handler->display->display_options['fields']['field_step_ikon']['id'] = 'field_step_ikon';
   $handler->display->display_options['fields']['field_step_ikon']['table'] = 'field_data_field_step_ikon';
   $handler->display->display_options['fields']['field_step_ikon']['field'] = 'field_step_ikon';
@@ -181,7 +217,7 @@ function finurlig_frontpage_steps_views_default_views() {
     'image_link' => '',
   );
   $handler->display->display_options['fields']['field_step_ikon']['field_api_classes'] = 0;
-  /* Field: Custom: content */
+  /* Felt: Custom: content */
   $handler->display->display_options['fields']['nothing_1']['id'] = 'nothing_1';
   $handler->display->display_options['fields']['nothing_1']['table'] = 'views';
   $handler->display->display_options['fields']['nothing_1']['field'] = 'nothing';
@@ -201,26 +237,26 @@ function finurlig_frontpage_steps_views_default_views() {
   $handler->display->display_options['fields']['nothing_1']['alter']['strip_tags'] = 0;
   $handler->display->display_options['fields']['nothing_1']['alter']['trim'] = 0;
   $handler->display->display_options['fields']['nothing_1']['alter']['html'] = 0;
-  $handler->display->display_options['fields']['nothing_1']['element_type'] = 'span';
+  $handler->display->display_options['fields']['nothing_1']['element_type'] = 'div';
   $handler->display->display_options['fields']['nothing_1']['element_class'] = 'step-content-wrapper';
   $handler->display->display_options['fields']['nothing_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['nothing_1']['element_default_classes'] = 0;
   $handler->display->display_options['fields']['nothing_1']['hide_empty'] = 0;
   $handler->display->display_options['fields']['nothing_1']['empty_zero'] = 0;
   $handler->display->display_options['fields']['nothing_1']['hide_alter_empty'] = 0;
-  /* Sort criterion: Nodequeue: Position */
+  /* Sorteringskriterie: Nodekø: Placering */
   $handler->display->display_options['sorts']['position']['id'] = 'position';
   $handler->display->display_options['sorts']['position']['table'] = 'nodequeue_nodes';
   $handler->display->display_options['sorts']['position']['field'] = 'position';
   $handler->display->display_options['sorts']['position']['relationship'] = 'nodequeue_rel';
-  /* Filter criterion: Content: Published */
+  /* Filterkriterie: Indhold: Udgivet */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Content: Type */
+  /* Filterkriterie: Indhold: Type */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
@@ -234,17 +270,18 @@ function finurlig_frontpage_steps_views_default_views() {
   $handler->display->display_options['path'] = 'frontpage';
   $translatables['frontpage_steps'] = array(
     t('Master'),
-    t('more'),
-    t('Apply'),
-    t('Reset'),
-    t('Sort by'),
-    t('Asc'),
-    t('Desc'),
-    t('Items per page'),
-    t('- All -'),
-    t('Offset'),
-    t('queue'),
+    t('mere'),
+    t('Udfør'),
+    t('Gendan'),
+    t('Sortér efter'),
+    t('Stigende'),
+    t('Faldende'),
+    t('Antal elementer'),
+    t('- Alle -'),
+    t('Forskydning'),
+    t('kø'),
     t('Step'),
+    t('<span class="step-text">[nothing]</span><span class="counter">[counter]</span>'),
     t('<span class="text">[field_step_content]</span>
 <span class="icon">[field_step_ikon]</span>'),
     t('Front page'),

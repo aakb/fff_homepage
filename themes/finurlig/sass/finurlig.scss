@@ -31,7 +31,7 @@ header {
     height: 255px;
     margin-bottom: 10px;
     .site-logo {
-      position: relative;
+      position: absolute;
       top: 65px;
       left: 4.255319148936%;
     }
@@ -41,32 +41,38 @@ header {
 // Style steps on frontpage.
 .section-content {
   margin: 20px;
-  h2 {
-    position: relative;
-    left: 8%;
-    color: $color-headlines;
-    font-size: 140%;
-    font-weight: bold;
-    margin-bottom: 20px;
-  }
+  
   
   p {
     margin-bottom: 1em;
   }
   
   .view-frontpage-steps {
+    float: left;
     li {
       clear: both;
       float: left;
       margin-bottom: 20px;
+      .step {
+        float: left;
+      }
       .step-text {
         font-size: 140%;
       }
       .counter {
         font-size: 500%;
         font-weight: bold;
-      }      
-      .step-content-wrapper {    
+      }
+      h2 {
+        color: $color-headlines;
+        float: left;
+        font-size: 140%;
+        font-weight: bold;
+        letter-spacing: 0em;
+        margin-bottom: 20px;
+      }
+      .step-content-wrapper {
+        clear: left;
         .text {
           position: relative;
           left: 8%;
