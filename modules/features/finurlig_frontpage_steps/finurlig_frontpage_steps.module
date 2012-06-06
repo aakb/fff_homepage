@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Finurlig frontpage steps feature.
+ */
+
+include_once 'finurlig_frontpage_steps.features.inc';

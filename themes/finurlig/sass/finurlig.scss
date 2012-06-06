@@ -58,8 +58,14 @@ header {
     li {
       clear: both;
       float: left;
-      list-style: decimal;
       margin-bottom: 20px;
+      .step-text {
+        font-size: 140%;
+      }
+      .counter {
+        font-size: 500%;
+        font-weight: bold;
+      }      
       .step-content-wrapper {    
         .text {
           position: relative;

@@ -138,23 +138,31 @@ header .zone-branding-wrapper .site-logo {
 .section-content .view-frontpage-steps li {
   clear: both;
   float: left;
-  list-style: decimal;
   margin-bottom: 20px;
 }
-/* line 64, ../sass/finurlig.scss */
+/* line 62, ../sass/finurlig.scss */
+.section-content .view-frontpage-steps li .step-text {
+  font-size: 140%;
+}
+/* line 65, ../sass/finurlig.scss */
+.section-content .view-frontpage-steps li .counter {
+  font-size: 500%;
+  font-weight: bold;
+}
+/* line 70, ../sass/finurlig.scss */
 .section-content .view-frontpage-steps li .step-content-wrapper .text {
   position: relative;
   left: 8%;
   float: left;
   width: 56.382978723404%;
 }
-/* line 70, ../sass/finurlig.scss */
+/* line 76, ../sass/finurlig.scss */
 .section-content .view-frontpage-steps li .step-content-wrapper .icon {
   float: right;
   width: 31.915%;
 }
 
-/* line 80, ../sass/finurlig.scss */
+/* line 86, ../sass/finurlig.scss */
 footer .zone-footer-wrapper {
   background-color: black;
   background-color: rgba(0, 0, 0, 0.75);
@@ -163,12 +171,12 @@ footer .zone-footer-wrapper {
   zoom: 1;
   height: 50px;
 }
-/* line 84, ../sass/finurlig.scss */
+/* line 90, ../sass/finurlig.scss */
 footer .content {
   color: #a2a2a2;
   margin-top: 15px;
 }
-/* line 87, ../sass/finurlig.scss */
+/* line 93, ../sass/finurlig.scss */
 footer .content a {
   color: #888888;
   text-decoration: none;
@@ -182,22 +190,22 @@ footer .content a:hover {
   text-decoration: underline;
 }
 
-/* line 95, ../sass/finurlig.scss */
+/* line 101, ../sass/finurlig.scss */
 .align-right {
   float: right;
   margin-left: 1em;
 }
-/* line 98, ../sass/finurlig.scss */
+/* line 104, ../sass/finurlig.scss */
 .align-right img {
   margin-top: 0;
 }
 
-/* line 103, ../sass/finurlig.scss */
+/* line 109, ../sass/finurlig.scss */
 .align-left {
   float: left;
   margin-right: 1em;
 }
-/* line 106, ../sass/finurlig.scss */
+/* line 112, ../sass/finurlig.scss */
 .align-left img {
   margin-top: 0;
 }
