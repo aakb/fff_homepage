@@ -7,6 +7,7 @@
 
 body {
   background-image: url('../images/fabric_background.png');
+  color: $color-text;
 }
 
 header {
@@ -31,13 +32,48 @@ header {
     margin-bottom: 10px;
     .site-logo {
       position: relative;
-      top: 60px;
+      top: 65px;
+      left: 4.255319148936%;
     }
   }
 }
 
+// Style steps on frontpage.
 .section-content {
   margin: 20px;
+  h2 {
+    position: relative;
+    left: 8%;
+    color: $color-headlines;
+    font-size: 140%;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  p {
+    margin-bottom: 1em;
+  }
+  
+  .view-frontpage-steps {
+    li {
+      clear: both;
+      float: left;
+      list-style: decimal;
+      margin-bottom: 20px;
+      .step-content-wrapper {    
+        .text {
+          position: relative;
+          left: 8%;
+          float: left;
+          width: 56.382978723404%;
+        }
+        .icon {
+          float: right;
+          width: 31.914893617021%
+        }
+      }
+    }
+  }
 }
 
 footer {
@@ -47,7 +83,7 @@ footer {
   }
   .content {
     color: lighten($color-header-light, 10%);
-    margin-top: 20px;
+    margin-top: 15px; // Fix this with % later
     a {
       @include link-colors($color-header-light, lighten($color-header-light, 10%));
       @include hover-link;

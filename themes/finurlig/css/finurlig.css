@@ -66,9 +66,10 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 /* line 8, ../sass/finurlig.scss */
 body {
   background-image: url("../images/fabric_background.png");
+  color: #969696;
 }
 
-/* line 13, ../sass/finurlig.scss */
+/* line 14, ../sass/finurlig.scss */
 header .zone-menu-wrapper {
   background-color: black;
   background-color: rgba(0, 0, 0, 0.75);
@@ -77,13 +78,13 @@ header .zone-menu-wrapper {
   zoom: 1;
   height: 30px;
 }
-/* line 16, ../sass/finurlig.scss */
+/* line 17, ../sass/finurlig.scss */
 header .zone-menu-wrapper nav {
   float: right;
   position: relative;
   top: 8px;
 }
-/* line 20, ../sass/finurlig.scss */
+/* line 21, ../sass/finurlig.scss */
 header .zone-menu-wrapper nav li a {
   color: #888888;
   text-decoration: none;
@@ -96,7 +97,7 @@ header .zone-menu-wrapper nav li a:hover {
 header .zone-menu-wrapper nav li a:hover {
   text-decoration: underline;
 }
-/* line 27, ../sass/finurlig.scss */
+/* line 28, ../sass/finurlig.scss */
 header .zone-branding-wrapper {
   -webkit-box-shadow: 0 5px 5px #888888;
   -moz-box-shadow: 0 5px 5px #888888;
@@ -109,18 +110,51 @@ header .zone-branding-wrapper {
   height: 255px;
   margin-bottom: 10px;
 }
-/* line 32, ../sass/finurlig.scss */
+/* line 33, ../sass/finurlig.scss */
 header .zone-branding-wrapper .site-logo {
   position: relative;
-  top: 60px;
+  top: 65px;
+  left: 4.255319148936%;
 }
 
-/* line 39, ../sass/finurlig.scss */
+/* line 42, ../sass/finurlig.scss */
 .section-content {
   margin: 20px;
 }
-
 /* line 44, ../sass/finurlig.scss */
+.section-content h2 {
+  position: relative;
+  left: 8%;
+  color: #ff5c13;
+  font-size: 140%;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+/* line 53, ../sass/finurlig.scss */
+.section-content p {
+  margin-bottom: 1em;
+}
+/* line 58, ../sass/finurlig.scss */
+.section-content .view-frontpage-steps li {
+  clear: both;
+  float: left;
+  list-style: decimal;
+  margin-bottom: 20px;
+}
+/* line 64, ../sass/finurlig.scss */
+.section-content .view-frontpage-steps li .step-content-wrapper .text {
+  position: relative;
+  left: 8%;
+  float: left;
+  width: 56.382978723404%;
+}
+/* line 70, ../sass/finurlig.scss */
+.section-content .view-frontpage-steps li .step-content-wrapper .icon {
+  float: right;
+  width: 31.915%;
+}
+
+/* line 80, ../sass/finurlig.scss */
 footer .zone-footer-wrapper {
   background-color: black;
   background-color: rgba(0, 0, 0, 0.75);
@@ -129,12 +163,12 @@ footer .zone-footer-wrapper {
   zoom: 1;
   height: 50px;
 }
-/* line 48, ../sass/finurlig.scss */
+/* line 84, ../sass/finurlig.scss */
 footer .content {
   color: #a2a2a2;
-  margin-top: 20px;
+  margin-top: 15px;
 }
-/* line 51, ../sass/finurlig.scss */
+/* line 87, ../sass/finurlig.scss */
 footer .content a {
   color: #888888;
   text-decoration: none;
@@ -148,22 +182,22 @@ footer .content a:hover {
   text-decoration: underline;
 }
 
-/* line 59, ../sass/finurlig.scss */
+/* line 95, ../sass/finurlig.scss */
 .align-right {
   float: right;
   margin-left: 1em;
 }
-/* line 62, ../sass/finurlig.scss */
+/* line 98, ../sass/finurlig.scss */
 .align-right img {
   margin-top: 0;
 }
 
-/* line 67, ../sass/finurlig.scss */
+/* line 103, ../sass/finurlig.scss */
 .align-left {
   float: left;
   margin-right: 1em;
 }
-/* line 70, ../sass/finurlig.scss */
+/* line 106, ../sass/finurlig.scss */
 .align-left img {
   margin-top: 0;
 }
