@@ -1,0 +1,4 @@
+name = "Finurlig administration"
+description = "Change settings only avaliable in hooks for the site"
+package = "Other"
+core = "7.x"
