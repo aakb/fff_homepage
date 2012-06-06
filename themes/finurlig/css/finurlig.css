@@ -96,7 +96,7 @@ header .zone-menu-wrapper nav li a:hover {
 header .zone-menu-wrapper nav li a:hover {
   text-decoration: underline;
 }
-/* line 28, ../sass/finurlig.scss */
+/* line 27, ../sass/finurlig.scss */
 header .zone-branding-wrapper {
   -webkit-box-shadow: 0 5px 5px #888888;
   -moz-box-shadow: 0 5px 5px #888888;
@@ -109,28 +109,61 @@ header .zone-branding-wrapper {
   height: 255px;
   margin-bottom: 10px;
 }
-/* line 33, ../sass/finurlig.scss */
+/* line 32, ../sass/finurlig.scss */
 header .zone-branding-wrapper .site-logo {
   position: relative;
   top: 60px;
 }
 
-/* line 41, ../sass/finurlig.scss */
+/* line 39, ../sass/finurlig.scss */
+.section-content {
+  margin: 20px;
+}
+
+/* line 44, ../sass/finurlig.scss */
+footer .zone-footer-wrapper {
+  background-color: black;
+  background-color: rgba(0, 0, 0, 0.75);
+  background-color: transparent\9;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#hex(191)hex(0)hex(0)hex(0),endColorstr=#hex(191)hex(0)hex(0)hex(0));
+  zoom: 1;
+  height: 50px;
+}
+/* line 48, ../sass/finurlig.scss */
+footer .content {
+  color: #a2a2a2;
+  margin-top: 20px;
+}
+/* line 51, ../sass/finurlig.scss */
+footer .content a {
+  color: #888888;
+  text-decoration: none;
+}
+/* line 24, ../../../../../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/typography/links/_link-colors.scss */
+footer .content a:hover {
+  color: #a2a2a2;
+}
+/* line 4, ../../../../../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/typography/links/_hover-link.scss */
+footer .content a:hover {
+  text-decoration: underline;
+}
+
+/* line 59, ../sass/finurlig.scss */
 .align-right {
   float: right;
   margin-left: 1em;
 }
-/* line 44, ../sass/finurlig.scss */
+/* line 62, ../sass/finurlig.scss */
 .align-right img {
   margin-top: 0;
 }
 
-/* line 49, ../sass/finurlig.scss */
+/* line 67, ../sass/finurlig.scss */
 .align-left {
   float: left;
   margin-right: 1em;
 }
-/* line 52, ../sass/finurlig.scss */
+/* line 70, ../sass/finurlig.scss */
 .align-left img {
   margin-top: 0;
 }

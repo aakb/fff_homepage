@@ -20,7 +20,6 @@ header {
       li a {
         @include link-colors($color-header-light, lighten($color-header-light, 10%));
         @include hover-link;
-
       }
     }
   }
@@ -33,6 +32,25 @@ header {
     .site-logo {
       position: relative;
       top: 60px;
+    }
+  }
+}
+
+.section-content {
+  margin: 20px;
+}
+
+footer {
+  .zone-footer-wrapper {
+    @include rgba-background($color-header-dark, .75);
+    height: 50px;
+  }
+  .content {
+    color: lighten($color-header-light, 10%);
+    margin-top: 20px;
+    a {
+      @include link-colors($color-header-light, lighten($color-header-light, 10%));
+      @include hover-link;
     }
   }
 }
