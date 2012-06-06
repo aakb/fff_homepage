@@ -20,7 +20,6 @@ features[feeds_importer][] = facts_importer
 features[field][] = node-fact-field_fact_author
 features[field][] = node-fact-field_fact_content
 features[field][] = node-fact-field_fact_inspiration
-features[field][] = node-fact-field_fact_organization
 features[field][] = node-fact-field_fact_source
 features[field][] = node-fact-field_fact_tags
 features[node][] = fact
