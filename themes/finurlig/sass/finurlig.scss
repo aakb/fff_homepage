@@ -42,6 +42,9 @@ header {
     @include single-box-shadow($color-header-light, 0, 5px, 5px);
     @include rgba-background($color-header-lighter, .75);
     height: 255px;
+    background-image: url('../images/header_edge_ff.png');
+    background-repeat: repeat-x;
+    background-position: left bottom;
     margin-bottom: 10px;
     .site-logo {
       position: absolute;
