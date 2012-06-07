@@ -137,6 +137,7 @@ function finurlig_frontpage_steps_views_default_views() {
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['exclude'] = TRUE;
   $handler->display->display_options['fields']['title']['alter']['alter_text'] = 0;
   $handler->display->display_options['fields']['title']['alter']['make_link'] = 0;
   $handler->display->display_options['fields']['title']['alter']['absolute'] = 0;
@@ -223,7 +224,7 @@ function finurlig_frontpage_steps_views_default_views() {
   $handler->display->display_options['fields']['nothing_1']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing_1']['ui_name'] = 'Custom: content';
   $handler->display->display_options['fields']['nothing_1']['label'] = '';
-  $handler->display->display_options['fields']['nothing_1']['alter']['text'] = '<span class="text">[field_step_content]</span>
+  $handler->display->display_options['fields']['nothing_1']['alter']['text'] = '<span class="text"><h2>[title]</h2>[field_step_content]</span>
 <span class="icon">[field_step_ikon]</span>';
   $handler->display->display_options['fields']['nothing_1']['alter']['make_link'] = 0;
   $handler->display->display_options['fields']['nothing_1']['alter']['absolute'] = 0;
@@ -282,7 +283,7 @@ function finurlig_frontpage_steps_views_default_views() {
     t('kø'),
     t('Step'),
     t('<span class="step-text">[nothing]</span><span class="counter">[counter]</span>'),
-    t('<span class="text">[field_step_content]</span>
+    t('<span class="text"><h2>[title]</h2>[field_step_content]</span>
 <span class="icon">[field_step_ikon]</span>'),
     t('Front page'),
     t('The sites frontpage steps'),

@@ -5,6 +5,8 @@
 @import "typography.scss";
 @import "variables.scss";
 
+@include font-face("Dora", font-files("akaDora/akaDora.woff", "akaDora/akaDora.ttf", "akaDora/akaDora.svg"), "akaDora/akaDora.eot", 'normal', 'normal');
+
 body {
   background-image: url('../images/fabric_background.png');
   color: $color-text;
@@ -33,14 +35,14 @@ header {
     .site-logo {
       position: absolute;
       top: 65px;
-/*      left: 4.255319148936%;*/
+      left: -7.255319148936%;
     }
   }
 }
 
 // Style steps on frontpage.
 .section-content {
-  margin: 20px;
+  margin: 20px 0;
 
 
   p {
@@ -57,30 +59,34 @@ header {
         float: left;
         width: 13.541666666667%;
         .step-text {
-          font-size: 140%;
+          font-family: "Dora";
+          color: $color-headlines;
+          position: relative;
+          font-size: 31px;
+          top: -20px;
         }
         .counter {
-          font-size: 500%;
+          font-size: 100px;
           font-weight: bold;
         }
       }
       .step-content-wrapper {
         float: left;
-        width: 84.042553191489%;
+        width: 79.042553191489%;
         h2 {
           color: $color-headlines;
-          font-size: 140%;
+          font-size: 25px;
           font-weight: bold;
           letter-spacing: 0em;
           margin-bottom: 10px;
         }
         .text {
           float: left;
-          width: 57.446808510638%;
+          width: 60.354430379747%;
         }
         .icon {
           float: right;
-          width: 26.595744680851%
+          width: 31.645569620253%;
         }
       }
     }

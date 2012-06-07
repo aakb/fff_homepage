@@ -1,0 +1,32 @@
+@media screen and (max-width: 1100px) {
+  /* line 8, ../sass/mediaqueries.scss */
+  header .zone-branding-wrapper .site-logo {
+    position: absolute;
+    top: 65px;
+    left: 0;
+  }
+}
+@media screen and (max-width: 779px) {
+  /* line 20, ../sass/mediaqueries.scss */
+  .section-content p {
+    margin-bottom: 0.5em;
+  }
+  /* line 26, ../sass/mediaqueries.scss */
+  .section-content .view-frontpage-steps li .step {
+    float: left;
+    width: 13.541666666667%;
+  }
+  /* line 31, ../sass/mediaqueries.scss */
+  .section-content .view-frontpage-steps li .step-content-wrapper h2 {
+    margin-bottom: 10px;
+  }
+  /* line 34, ../sass/mediaqueries.scss */
+  .section-content .view-frontpage-steps li .step-content-wrapper .text {
+    width: 100%;
+  }
+  /* line 37, ../sass/mediaqueries.scss */
+  .section-content .view-frontpage-steps li .step-content-wrapper .icon {
+    display: none;
+    width: 0px;
+  }
+}

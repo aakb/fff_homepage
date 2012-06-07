@@ -1,0 +1,55 @@
+@import "compass/css3";
+@import "variables.scss";
+
+// 1100
+@media screen and (max-width: 1100px) {
+  header {
+    .zone-branding-wrapper {
+      .site-logo {
+        position: absolute;
+        top: 65px;
+        left: 0;
+      }
+    }
+  }
+}
+
+// 768
+@media screen and (max-width: 779px) {
+  .section-content {
+    p {
+      margin-bottom: 0.5em;
+    }
+
+    .view-frontpage-steps {
+      li {
+        .step {
+          float: left;
+          width: 13.541666666667%;
+        }
+        .step-content-wrapper {
+          h2 {
+            margin-bottom: 10px;
+          }
+          .text {
+            width: 100%;
+          }
+          .icon {
+            display: none;
+            width: 0px;
+          }
+        }
+      }
+    }
+  } 
+}
+
+// 550
+@media screen and (max-width: 550px) {
+  
+}
+
+//400
+@media screen and (max-width: 400px) {
+  
+}

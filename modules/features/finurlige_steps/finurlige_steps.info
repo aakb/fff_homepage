@@ -2,6 +2,7 @@ name = Finurlige steps
 description = Steps content type
 core = 7.x
 package = Services
+php = 5.2.4
 version = 7.x-1.0-beta1
 project = finurlige_steps
 dependencies[] = ctools
