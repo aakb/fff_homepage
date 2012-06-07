@@ -1,0 +1,12 @@
+/* line 1, ../sass/finurlig-alpha-default-narrow.scss */
+.section-content {
+  margin: 10px;
+}
+/* line 4, ../sass/finurlig-alpha-default-narrow.scss */
+.section-content p {
+  margin-bottom: 0.5em;
+}
+/* line 10, ../sass/finurlig-alpha-default-narrow.scss */
+.section-content .view-frontpage-steps .step-content-wrapper .icon {
+  display: none;
+}

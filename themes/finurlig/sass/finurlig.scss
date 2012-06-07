@@ -24,7 +24,7 @@ header {
       }
     }
   }
-  
+
   .zone-branding-wrapper {
     @include single-box-shadow($color-header-light, 0, 5px, 5px);
     @include rgba-background($color-header-lighter, .75);
@@ -33,7 +33,7 @@ header {
     .site-logo {
       position: absolute;
       top: 65px;
-      left: 4.255319148936%;
+/*      left: 4.255319148936%;*/
     }
   }
 }
@@ -41,47 +41,46 @@ header {
 // Style steps on frontpage.
 .section-content {
   margin: 20px;
-  
-  
+
+
   p {
     margin-bottom: 1em;
   }
-  
+
   .view-frontpage-steps {
     float: left;
     li {
-      clear: both;
+      clear: left;
       float: left;
       margin-bottom: 20px;
       .step {
         float: left;
-      }
-      .step-text {
-        font-size: 140%;
-      }
-      .counter {
-        font-size: 500%;
-        font-weight: bold;
-      }
-      h2 {
-        color: $color-headlines;
-        float: left;
-        font-size: 140%;
-        font-weight: bold;
-        letter-spacing: 0em;
-        margin-bottom: 20px;
+        width: 13.541666666667%;
+        .step-text {
+          font-size: 140%;
+        }
+        .counter {
+          font-size: 500%;
+          font-weight: bold;
+        }
       }
       .step-content-wrapper {
-        clear: left;
+        float: left;
+        width: 84.042553191489%;
+        h2 {
+          color: $color-headlines;
+          font-size: 140%;
+          font-weight: bold;
+          letter-spacing: 0em;
+          margin-bottom: 10px;
+        }
         .text {
-          position: relative;
-          left: 8%;
           float: left;
-          width: 56.382978723404%;
+          width: 57.446808510638%;
         }
         .icon {
           float: right;
-          width: 31.914893617021%
+          width: 26.595744680851%
         }
       }
     }
