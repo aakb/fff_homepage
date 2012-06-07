@@ -5,11 +5,17 @@
 @import "typography.scss";
 @import "variables.scss";
 
-@include font-face("Dora", font-files("akaDora/akaDora.woff", "akaDora/akaDora.ttf", "akaDora/akaDora.svg"), "akaDora/akaDora.eot", 'normal', 'normal');
-
 body {
   background-image: url('../images/fabric_background.png');
-  color: $color-text;
+  a {
+    // Use link-colors() from compass
+    &:link,
+    &:visited,
+    &:hover,
+    &:active {
+      @include link-colors($color-link, $color-link,$color-link, $color-link, $color-link);
+    }
+  }
 }
 
 header {
@@ -21,8 +27,13 @@ header {
       position: relative;
       top: 8px;
       li a {
-        @include link-colors($color-header-light, lighten($color-header-light, 10%));
-        @include hover-link;
+        &:link,
+        &:visited,
+        &:hover,
+        &:active {
+         @include link-colors($color-header-light, lighten($color-header-light, 10%));
+          @include hover-link;
+        }
       }
     }
   }
@@ -42,9 +53,6 @@ header {
 
 // Style steps on frontpage.
 .section-content {
-  margin: 20px 0;
-
-
   p {
     margin-bottom: 1em;
   }
@@ -54,31 +62,25 @@ header {
     li {
       clear: left;
       float: left;
-      margin-bottom: 20px;
+      padding: 60px 0;
+      background: transparent url('../images/dashes.png') repeat-x left bottom;
+      &.views-row-last {
+        background: none;
+      }
       .step {
         float: left;
         width: 13.541666666667%;
         .step-text {
-          font-family: "Dora";
-          color: $color-headlines;
           position: relative;
-          font-size: 31px;
-          top: -20px;
-        }
-        .counter {
-          font-size: 100px;
-          font-weight: bold;
+          top: -35px;
         }
       }
       .step-content-wrapper {
         float: left;
         width: 79.042553191489%;
         h2 {
-          color: $color-headlines;
-          font-size: 25px;
-          font-weight: bold;
-          letter-spacing: 0em;
-          margin-bottom: 10px;
+          padding-top: 8px;
+          margin-bottom: 30px;
         }
         .text {
           float: left;
@@ -99,7 +101,7 @@ footer {
     height: 50px;
   }
   .content {
-    color: lighten($color-header-light, 10%);
+    color: lighten($color-header-light, 10%); 
     margin-top: 15px; // Fix this with % later
     a {
       @include link-colors($color-header-light, lighten($color-header-light, 10%));

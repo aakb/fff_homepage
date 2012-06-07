@@ -1,0 +1,40 @@
+@import "compass/css3";
+@import "compass/utilities";
+@import "variables.scss";
+
+@include font-face("akaDora", font-files("akaDora/akaDora.woff", "akaDora/akaDora.ttf", "akaDora/akaDora.svg"), "akaDora/akaDora.eot", 'normal', 'normal');
+@include font-face("PTSansRegular", font-files("ptSans/PTS55F-webfont.woff", "ptSans/PTS55F-webfont.ttf", "ptSans/PTS55F-webfont.svg"), "ptSans/PTS55F-webfont.eot", 'normal', 'normal');
+@include font-face("mgOpenModerna", font-files("mgOpenModerna/mgopenmodernabold-webfont.woff", "mgOpenModerna/mgopenmodernabold-webfont.ttf", "mgOpenModerna/mgopenmodernabold-webfont.svg"), "mgOpenModerna/mgopenmodernabold-webfont.eot", 'bold', 'bold');
+
+body {
+  color: $color-text;
+  font-family: $main_font;
+  font-size: 15px;
+}
+
+b, strong {
+  font-weight: bold;
+}
+
+em, i {
+ font-style: italic;
+}
+
+.view-frontpage-steps {
+  h2 {
+    color: $color-headlines;
+    font-size: 25px;
+    font-weight: bold;
+    letter-spacing: 0em;
+  }
+  .step-text {
+    font-family: $sec_font; 
+    font-size: 31px;
+    color: $color-step;
+  }
+  .counter {
+    font-family: "mgOpenModerna";
+    font-size: 100px;
+    color: lighten($color-text, 40%);
+  }
+}

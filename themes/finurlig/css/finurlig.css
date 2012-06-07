@@ -64,20 +64,92 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 }
 
 @font-face {
-  font-family: "Dora";
+  font-family: "akaDora";
   src: url('fonts/akaDora/akaDora.eot');
   src: url('fonts/akaDora/akaDora.eot?#iefix') format('eot'), url('fonts/akaDora/akaDora.woff') format('woff'), url('fonts/akaDora/akaDora.ttf') format('truetype'), url('fonts/akaDora/akaDora.svg') format('svg');
   font-weight: "normal";
   font-style: "normal";
 }
 
-/* line 10, ../sass/finurlig.scss */
-body {
-  background-image: url("../images/fabric_background.png");
-  color: #424242;
+@font-face {
+  font-family: "PTSansRegular";
+  src: url('fonts/ptSans/PTS55F-webfont.eot');
+  src: url('fonts/ptSans/PTS55F-webfont.eot?#iefix') format('eot'), url('fonts/ptSans/PTS55F-webfont.woff') format('woff'), url('fonts/ptSans/PTS55F-webfont.ttf') format('truetype'), url('fonts/ptSans/PTS55F-webfont.svg') format('svg');
+  font-weight: "normal";
+  font-style: "normal";
 }
 
-/* line 16, ../sass/finurlig.scss */
+@font-face {
+  font-family: "mgOpenModerna";
+  src: url('fonts/mgOpenModerna/mgopenmodernabold-webfont.eot');
+  src: url('fonts/mgOpenModerna/mgopenmodernabold-webfont.eot?#iefix') format('eot'), url('fonts/mgOpenModerna/mgopenmodernabold-webfont.woff') format('woff'), url('fonts/mgOpenModerna/mgopenmodernabold-webfont.ttf') format('truetype'), url('fonts/mgOpenModerna/mgopenmodernabold-webfont.svg') format('svg');
+  font-weight: "bold";
+  font-style: "bold";
+}
+
+/* line 9, ../sass/typography.scss */
+body {
+  color: #525252;
+  font-family: "PTSansRegular";
+  font-size: 15px;
+}
+
+/* line 15, ../sass/typography.scss */
+b, strong {
+  font-weight: bold;
+}
+
+/* line 19, ../sass/typography.scss */
+em, i {
+  font-style: italic;
+}
+
+/* line 24, ../sass/typography.scss */
+.view-frontpage-steps h2 {
+  color: #fd4412;
+  font-size: 25px;
+  font-weight: bold;
+  letter-spacing: 0em;
+}
+/* line 30, ../sass/typography.scss */
+.view-frontpage-steps .step-text {
+  font-family: "akaDora";
+  font-size: 31px;
+  color: #fd7058;
+}
+/* line 35, ../sass/typography.scss */
+.view-frontpage-steps .counter {
+  font-family: "mgOpenModerna";
+  font-size: 100px;
+  color: #b8b8b8;
+}
+
+/* line 8, ../sass/finurlig.scss */
+body {
+  background-image: url("../images/fabric_background.png");
+}
+/* line 15, ../sass/finurlig.scss */
+body a:link, body a:visited, body a:hover, body a:active {
+  color: #f13535;
+}
+/* line 18, ../../../../../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/typography/links/_link-colors.scss */
+body a:link:visited, body a:visited:visited, body a:hover:visited, body a:active:visited {
+  color: #f13535;
+}
+/* line 21, ../../../../../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/typography/links/_link-colors.scss */
+body a:link:focus, body a:visited:focus, body a:hover:focus, body a:active:focus {
+  color: #f13535;
+}
+/* line 24, ../../../../../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/typography/links/_link-colors.scss */
+body a:link:hover, body a:visited:hover, body a:hover:hover, body a:active:hover {
+  color: #f13535;
+}
+/* line 27, ../../../../../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/typography/links/_link-colors.scss */
+body a:link:active, body a:visited:active, body a:hover:active, body a:active:active {
+  color: #f13535;
+}
+
+/* line 22, ../sass/finurlig.scss */
 header .zone-menu-wrapper {
   background-color: black;
   background-color: rgba(0, 0, 0, 0.75);
@@ -86,26 +158,26 @@ header .zone-menu-wrapper {
   zoom: 1;
   height: 30px;
 }
-/* line 19, ../sass/finurlig.scss */
+/* line 25, ../sass/finurlig.scss */
 header .zone-menu-wrapper nav {
   float: right;
   position: relative;
   top: 8px;
 }
-/* line 23, ../sass/finurlig.scss */
-header .zone-menu-wrapper nav li a {
+/* line 33, ../sass/finurlig.scss */
+header .zone-menu-wrapper nav li a:link, header .zone-menu-wrapper nav li a:visited, header .zone-menu-wrapper nav li a:hover, header .zone-menu-wrapper nav li a:active {
   color: #888888;
   text-decoration: none;
 }
 /* line 24, ../../../../../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/typography/links/_link-colors.scss */
-header .zone-menu-wrapper nav li a:hover {
+header .zone-menu-wrapper nav li a:link:hover, header .zone-menu-wrapper nav li a:visited:hover, header .zone-menu-wrapper nav li a:hover:hover, header .zone-menu-wrapper nav li a:active:hover {
   color: #a2a2a2;
 }
 /* line 4, ../../../../../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/typography/links/_hover-link.scss */
-header .zone-menu-wrapper nav li a:hover {
+header .zone-menu-wrapper nav li a:link:hover, header .zone-menu-wrapper nav li a:visited:hover, header .zone-menu-wrapper nav li a:hover:hover, header .zone-menu-wrapper nav li a:active:hover {
   text-decoration: underline;
 }
-/* line 30, ../sass/finurlig.scss */
+/* line 41, ../sass/finurlig.scss */
 header .zone-branding-wrapper {
   -webkit-box-shadow: 0 5px 5px #888888;
   -moz-box-shadow: 0 5px 5px #888888;
@@ -118,74 +190,64 @@ header .zone-branding-wrapper {
   height: 255px;
   margin-bottom: 10px;
 }
-/* line 35, ../sass/finurlig.scss */
+/* line 46, ../sass/finurlig.scss */
 header .zone-branding-wrapper .site-logo {
   position: absolute;
   top: 65px;
   left: -7.255%;
 }
 
-/* line 44, ../sass/finurlig.scss */
-.section-content {
-  margin: 20px 0;
-}
-/* line 48, ../sass/finurlig.scss */
+/* line 56, ../sass/finurlig.scss */
 .section-content p {
   margin-bottom: 1em;
 }
-/* line 52, ../sass/finurlig.scss */
+/* line 60, ../sass/finurlig.scss */
 .section-content .view-frontpage-steps {
   float: left;
 }
-/* line 54, ../sass/finurlig.scss */
+/* line 62, ../sass/finurlig.scss */
 .section-content .view-frontpage-steps li {
   clear: left;
   float: left;
-  margin-bottom: 20px;
+  padding: 60px 0;
+  background: transparent url("../images/dashes.png") repeat-x left bottom;
 }
-/* line 58, ../sass/finurlig.scss */
+/* line 67, ../sass/finurlig.scss */
+.section-content .view-frontpage-steps li.views-row-last {
+  background: none;
+}
+/* line 70, ../sass/finurlig.scss */
 .section-content .view-frontpage-steps li .step {
   float: left;
   width: 13.541666666667%;
 }
-/* line 61, ../sass/finurlig.scss */
-.section-content .view-frontpage-steps li .step .step-text {
-  font-family: "Dora";
-  color: #ff5c13;
-  position: relative;
-  font-size: 31px;
-  top: -20px;
-}
-/* line 68, ../sass/finurlig.scss */
-.section-content .view-frontpage-steps li .step .counter {
-  font-size: 100px;
-  font-weight: bold;
-}
 /* line 73, ../sass/finurlig.scss */
+.section-content .view-frontpage-steps li .step .step-text {
+  position: relative;
+  top: -35px;
+}
+/* line 78, ../sass/finurlig.scss */
 .section-content .view-frontpage-steps li .step-content-wrapper {
   float: left;
   width: 79.042553191489%;
 }
-/* line 76, ../sass/finurlig.scss */
+/* line 81, ../sass/finurlig.scss */
 .section-content .view-frontpage-steps li .step-content-wrapper h2 {
-  color: #ff5c13;
-  font-size: 25px;
-  font-weight: bold;
-  letter-spacing: 0em;
-  margin-bottom: 10px;
+  padding-top: 8px;
+  margin-bottom: 30px;
 }
-/* line 83, ../sass/finurlig.scss */
+/* line 85, ../sass/finurlig.scss */
 .section-content .view-frontpage-steps li .step-content-wrapper .text {
   float: left;
   width: 60.354430379747%;
 }
-/* line 87, ../sass/finurlig.scss */
+/* line 89, ../sass/finurlig.scss */
 .section-content .view-frontpage-steps li .step-content-wrapper .icon {
   float: right;
   width: 31.645569620253%;
 }
 
-/* line 97, ../sass/finurlig.scss */
+/* line 99, ../sass/finurlig.scss */
 footer .zone-footer-wrapper {
   background-color: black;
   background-color: rgba(0, 0, 0, 0.75);
@@ -194,12 +256,12 @@ footer .zone-footer-wrapper {
   zoom: 1;
   height: 50px;
 }
-/* line 101, ../sass/finurlig.scss */
+/* line 103, ../sass/finurlig.scss */
 footer .content {
   color: #a2a2a2;
   margin-top: 15px;
 }
-/* line 104, ../sass/finurlig.scss */
+/* line 106, ../sass/finurlig.scss */
 footer .content a {
   color: #888888;
   text-decoration: none;
@@ -213,22 +275,22 @@ footer .content a:hover {
   text-decoration: underline;
 }
 
-/* line 112, ../sass/finurlig.scss */
+/* line 114, ../sass/finurlig.scss */
 .align-right {
   float: right;
   margin-left: 1em;
 }
-/* line 115, ../sass/finurlig.scss */
+/* line 117, ../sass/finurlig.scss */
 .align-right img {
   margin-top: 0;
 }
 
-/* line 120, ../sass/finurlig.scss */
+/* line 122, ../sass/finurlig.scss */
 .align-left {
   float: left;
   margin-right: 1em;
 }
-/* line 123, ../sass/finurlig.scss */
+/* line 125, ../sass/finurlig.scss */
 .align-left img {
   margin-top: 0;
 }
