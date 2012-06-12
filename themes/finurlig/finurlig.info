@@ -1,5 +1,5 @@
-name = "Finurlig"
-description = "Finurlig fakta one page site"
+name = Finurlig
+description = Finurlig fakta one page site
 core = 7.x
 base theme = itkore
 
@@ -35,6 +35,10 @@ css[finurlig.css][options][weight] = '10'
 css[mediaqueries.css][name] = 'Finurlig Fakta mediaqueries'
 css[mediaqueries.css][description] = 'This file holds the mediaqueries styles.'
 css[mediaqueries.css][options][weight] = '10'
+
+; ----- / SCRIPTS / -----
+
+scripts[] = scripts/fff_widget.js
 
 ; THEME SETTINGS
 

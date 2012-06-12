@@ -54,6 +54,45 @@ header {
   }
 }
 
+// Style the widget.
+#fff-widget {
+  float: right;
+  width: 50.531914893617%;
+  height: 255px;
+  .fffW-widget {
+    position: absolute;
+    top: 0;
+    bottom: 50%;
+    height: 1em;
+    margin: auto;
+  }
+  .fff-quotes {
+    height: 45px;
+    width: 45px;
+    background: transparent no-repeat url('../images/quotes.png');
+    position: absolute; 
+    top: -40px; 
+    left: -60px;
+  }
+  .fffW-title {
+    font-size: 35px;
+    margin-bottom: 15px;
+  }
+  .fffW-text {
+    font-size: 16px;
+  }
+  .fffw-button-reload {
+    display: block;
+    background: transparent no-repeat url('../images/icon_reload.png') center;
+    height: 30px;
+    padding-top: 10px;
+    overflow: hidden;
+    text-indent: -9999px;
+    width: 26px;
+    float: right;
+  }
+}
+
 // Style steps on frontpage.
 .section-content {
   p {
