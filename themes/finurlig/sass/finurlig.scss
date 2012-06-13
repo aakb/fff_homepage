@@ -87,13 +87,16 @@ header {
   }
   .fffw-button-reload {
     display: block;
-    background: transparent no-repeat url('../images/icon_reload.png') center;
+    background: transparent no-repeat url('../images/icon_reload.png') -29px 0;
     height: 30px;
     padding-top: 10px;
     overflow: hidden;
     text-indent: -9999px;
     width: 26px;
     float: right;
+    &:hover {
+      background: transparent no-repeat url('../images/icon_reload.png') 0 0;
+    }
   }
 }
 
