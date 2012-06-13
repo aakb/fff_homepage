@@ -59,6 +59,8 @@ header {
   float: right;
   width: 50.531914893617%;
   height: 255px;
+  color: lighten($color-text, 20%);
+  letter-spacing: 0.04em;
   .fffW-widget {
     position: absolute;
     top: 0;

@@ -205,8 +205,10 @@ header .zone-branding-wrapper .site-logo {
   float: right;
   width: 50.531914893617%;
   height: 255px;
+  color: #858585;
+  letter-spacing: 0.04em;
 }
-/* line 62, ../sass/finurlig.scss */
+/* line 64, ../sass/finurlig.scss */
 #fff-widget .fffW-widget {
   position: absolute;
   top: 0;
@@ -214,7 +216,7 @@ header .zone-branding-wrapper .site-logo {
   height: 1em;
   margin: auto;
 }
-/* line 69, ../sass/finurlig.scss */
+/* line 71, ../sass/finurlig.scss */
 #fff-widget .fff-quotes {
   height: 45px;
   width: 45px;
@@ -223,16 +225,16 @@ header .zone-branding-wrapper .site-logo {
   top: -40px;
   left: -60px;
 }
-/* line 77, ../sass/finurlig.scss */
+/* line 79, ../sass/finurlig.scss */
 #fff-widget .fffW-title {
   font-size: 35px;
   margin-bottom: 15px;
 }
-/* line 81, ../sass/finurlig.scss */
+/* line 83, ../sass/finurlig.scss */
 #fff-widget .fffW-text {
   font-size: 16px;
 }
-/* line 84, ../sass/finurlig.scss */
+/* line 86, ../sass/finurlig.scss */
 #fff-widget .fffw-button-reload {
   display: block;
   background: transparent no-repeat url("../images/icon_reload.png") center;
@@ -244,57 +246,57 @@ header .zone-branding-wrapper .site-logo {
   float: right;
 }
 
-/* line 98, ../sass/finurlig.scss */
+/* line 100, ../sass/finurlig.scss */
 .section-content p {
   margin-bottom: 1em;
 }
-/* line 102, ../sass/finurlig.scss */
+/* line 104, ../sass/finurlig.scss */
 .section-content .view-frontpage-steps {
   float: left;
 }
-/* line 104, ../sass/finurlig.scss */
+/* line 106, ../sass/finurlig.scss */
 .section-content .view-frontpage-steps li {
   clear: left;
   float: left;
   padding: 60px 0;
   background: transparent url("../images/dashes.png") repeat-x left bottom;
 }
-/* line 109, ../sass/finurlig.scss */
+/* line 111, ../sass/finurlig.scss */
 .section-content .view-frontpage-steps li.views-row-last {
   background: none;
 }
-/* line 112, ../sass/finurlig.scss */
+/* line 114, ../sass/finurlig.scss */
 .section-content .view-frontpage-steps li .step {
   float: left;
   width: 13.541666666667%;
 }
-/* line 115, ../sass/finurlig.scss */
+/* line 117, ../sass/finurlig.scss */
 .section-content .view-frontpage-steps li .step .step-text {
   position: relative;
   top: -35px;
 }
-/* line 120, ../sass/finurlig.scss */
+/* line 122, ../sass/finurlig.scss */
 .section-content .view-frontpage-steps li .step-content-wrapper {
   float: left;
   width: 79.042553191489%;
 }
-/* line 123, ../sass/finurlig.scss */
+/* line 125, ../sass/finurlig.scss */
 .section-content .view-frontpage-steps li .step-content-wrapper h2 {
   padding-top: 8px;
   margin-bottom: 30px;
 }
-/* line 127, ../sass/finurlig.scss */
+/* line 129, ../sass/finurlig.scss */
 .section-content .view-frontpage-steps li .step-content-wrapper .text {
   float: left;
   width: 60.354430379747%;
 }
-/* line 131, ../sass/finurlig.scss */
+/* line 133, ../sass/finurlig.scss */
 .section-content .view-frontpage-steps li .step-content-wrapper .icon {
   float: right;
   width: 31.645569620253%;
 }
 
-/* line 141, ../sass/finurlig.scss */
+/* line 143, ../sass/finurlig.scss */
 footer .zone-footer-wrapper {
   background-color: black;
   background-color: rgba(0, 0, 0, 0.75);
@@ -303,12 +305,12 @@ footer .zone-footer-wrapper {
   zoom: 1;
   height: 50px;
 }
-/* line 145, ../sass/finurlig.scss */
+/* line 147, ../sass/finurlig.scss */
 footer .content {
   color: #a2a2a2;
   margin-top: 15px;
 }
-/* line 148, ../sass/finurlig.scss */
+/* line 150, ../sass/finurlig.scss */
 footer .content a {
   color: #888888;
   text-decoration: none;
@@ -322,22 +324,22 @@ footer .content a:hover {
   text-decoration: underline;
 }
 
-/* line 156, ../sass/finurlig.scss */
+/* line 158, ../sass/finurlig.scss */
 .align-right {
   float: right;
   margin-left: 1em;
 }
-/* line 159, ../sass/finurlig.scss */
+/* line 161, ../sass/finurlig.scss */
 .align-right img {
   margin-top: 0;
 }
 
-/* line 164, ../sass/finurlig.scss */
+/* line 166, ../sass/finurlig.scss */
 .align-left {
   float: left;
   margin-right: 1em;
 }
-/* line 167, ../sass/finurlig.scss */
+/* line 169, ../sass/finurlig.scss */
 .align-left img {
   margin-top: 0;
 }
