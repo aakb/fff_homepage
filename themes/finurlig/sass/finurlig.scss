@@ -68,6 +68,7 @@ header {
     height: 1em;
     margin: auto;
     width: 50.531914893617%; /* IE 8 fix */
+    height: 0 /* IE 8 fix */
   }
   .fff-quotes {
     height: 45px;
