@@ -6,10 +6,12 @@ var fffWidgetConfig = [];
 fffWidgetConfig.push({
   'widget' : 'interactive',
   'target' : '#fff-widget',
-  'loadComplet' : function () {
-    (function($) {
-      $('.fffW-widget').append('<div class="fff-quotes"></div>');
-    }(jQuery));
+  'event' : {
+    'loadComplet' : function () {
+      (function($) {
+        $('.fffW-widget').append('<div class="fff-quotes"></div>');
+      }(jQuery));
+    }
   }
 });
 
