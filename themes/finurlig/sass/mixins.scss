@@ -1,8 +1,8 @@
-// RGBa background
-@mixin rgba-background($color, $opacity) {
-  background-color: $color;
-  background-color: rgba($color, $opacity);
-  background-color: transparent\9;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#{'#'+hex(round($opacity*255)) + '' + hex(red($color)) + '' + hex(green($color)) + '' + hex(blue($color))},endColorstr=#{'#'+hex(round($opacity*255)) + '' + hex(red($color)) + '' + hex(green($color)) + '' + hex(blue($color))});
+// RGBa background (https://gist.github.com/1949202)
+@mixin rgba-background($color, $alpha) {  
+  $rgba: rgba($color, $alpha);
+  $ie-hex-str: ie-hex-str($rgba);  
+  background-color: $rgba;
   zoom: 1;
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#{$ie-hex-str},endColorstr=#{$ie-hex-str});
 }

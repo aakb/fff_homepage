@@ -151,11 +151,9 @@ body a:link:active, body a:visited:active, body a:hover:active, body a:active:ac
 
 /* line 22, ../sass/finurlig.scss */
 header .zone-menu-wrapper {
-  background-color: black;
   background-color: rgba(0, 0, 0, 0.75);
-  background-color: transparent\9;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#hex(191)hex(0)hex(0)hex(0),endColorstr=#hex(191)hex(0)hex(0)hex(0));
   zoom: 1;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#BF000000,endColorstr=#BF000000);
   height: 30px;
 }
 /* line 25, ../sass/finurlig.scss */
@@ -182,11 +180,9 @@ header .zone-branding-wrapper {
   -webkit-box-shadow: 0 5px 5px #888888;
   -moz-box-shadow: 0 5px 5px #888888;
   box-shadow: 0 5px 5px #888888;
-  background-color: white;
   background-color: rgba(255, 255, 255, 0.75);
-  background-color: transparent\9;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#hex(191)hex(255)hex(255)hex(255),endColorstr=#hex(191)hex(255)hex(255)hex(255));
   zoom: 1;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#BFFFFFFF,endColorstr=#BFFFFFFF);
   height: 255px;
   background-image: url("../images/header_edge_ff.png");
   background-repeat: repeat-x;
@@ -298,11 +294,9 @@ header .zone-branding-wrapper .site-logo {
 
 /* line 143, ../sass/finurlig.scss */
 footer .zone-footer-wrapper {
-  background-color: black;
   background-color: rgba(0, 0, 0, 0.75);
-  background-color: transparent\9;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#hex(191)hex(0)hex(0)hex(0),endColorstr=#hex(191)hex(0)hex(0)hex(0));
   zoom: 1;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#BF000000,endColorstr=#BF000000);
   height: 50px;
 }
 /* line 147, ../sass/finurlig.scss */
