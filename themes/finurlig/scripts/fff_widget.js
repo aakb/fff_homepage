@@ -1,7 +1,3 @@
-function fffWidgetCompleted() {
-  
-}
-
 var fffWidgetConfig = [];
 fffWidgetConfig.push({
   'widget' : 'interactive',

@@ -175,3 +175,21 @@ footer {
     margin-top: 0;
   }
 }
+
+// Handle widget generator code.
+#fff-widget-generator {
+  label {
+    clear: both;
+    width: 100%;
+    display: block;
+  }
+  fieldset { 
+    label {
+      input {
+        float: left;
+        margin-right: 8px;
+      }
+    }
+    
+  }
+}

@@ -344,3 +344,15 @@ footer .content a:hover {
 .align-left img {
   margin-top: 0;
 }
+
+/* line 181, ../sass/finurlig.scss */
+#fff-widget-generator label {
+  clear: both;
+  width: 100%;
+  display: block;
+}
+/* line 188, ../sass/finurlig.scss */
+#fff-widget-generator fieldset label input {
+  float: left;
+  margin-right: 8px;
+}
