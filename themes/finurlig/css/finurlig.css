@@ -345,14 +345,37 @@ footer .content a:hover {
   margin-top: 0;
 }
 
-/* line 181, ../sass/finurlig.scss */
-#fff-widget-generator label {
+/* line 182, ../sass/finurlig.scss */
+.fff-widget-generator-wrapper #fff-widget-generator label {
   clear: both;
   width: 100%;
   display: block;
 }
-/* line 188, ../sass/finurlig.scss */
-#fff-widget-generator fieldset label input {
+/* line 186, ../sass/finurlig.scss */
+.fff-widget-generator-wrapper #fff-widget-generator label input, .fff-widget-generator-wrapper #fff-widget-generator label select {
+  margin: 4px 0 4px 8px;
+}
+/* line 190, ../sass/finurlig.scss */
+.fff-widget-generator-wrapper #fff-widget-generator fieldset {
+  border: 2px groove #F0F0F0;
+  margin: 8px;
+}
+/* line 193, ../sass/finurlig.scss */
+.fff-widget-generator-wrapper #fff-widget-generator fieldset legend {
+  /*      padding-bottom: 4px;
+        padding-left: 8px;*/
+}
+/* line 198, ../sass/finurlig.scss */
+.fff-widget-generator-wrapper #fff-widget-generator fieldset label input {
   float: left;
   margin-right: 8px;
+}
+
+/* line 208, ../sass/finurlig.scss */
+#fff-widget-code-wrapper #fff-widget-code {
+  background-color: #FFF;
+  border: 2px groove #F0F0F0;
+  height: 320px;
+  overflow: auto;
+  margin-bottom: 8px;
 }

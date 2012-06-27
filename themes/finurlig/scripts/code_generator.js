@@ -2,10 +2,10 @@
   "use strict";
 
   $(document).ready(function() {
-    // Find place to append the generator.
-    var target = $('a[name=node-525]').parent();
+    // Outer wrapper.
+    var generatorWrapper = $('<div />', { 'class' : 'fff-widget-generator-wrapper' }).hide();
 
-    // Form element
+    // Form element.
     var generator = $('<form />', {
      'id' : 'fff-widget-generator',
      'name' : 'fff-widget-generator',
@@ -61,7 +61,7 @@
                 'value' : 'red',
                 'checked' :'checked'
               }));
-              
+
     var green = $('<label />', {
                 'text' : 'Green'
               }).append($('<input />', {
@@ -69,7 +69,7 @@
                 'name' : 'color',
                 'value' : 'green'
               }));
-              
+
     var blue = $('<label />', {
                 'text' : 'Blue'
               }).append($('<input />', {
@@ -77,7 +77,7 @@
                 'name' : 'color',
                 'value' : 'blue'
               }));
-              
+
     var orange = $('<label />', {
                 'text' : 'Orange'
               }).append($('<input />', {
@@ -85,7 +85,7 @@
                 'name' : 'color',
                 'value' : 'orange'
               }));
-    
+
     var turquioise = $('<label />', {
                 'text' : 'Turquioise'
               }).append($('<input />', {
@@ -93,29 +93,68 @@
                 'name' : 'color',
                 'value' : 'turquioise'
               }));
-    
+
     generator.append($('<fieldset />').append($('<legend />', {
                        'text' : 'Colors'
-                     })
+                     }))
                      .append(red)
                      .append(green)
                      .append(blue)
                      .append(orange)
-                     .append(turquioise)));
+                     .append(turquioise));
 
     // Add submit handler.
     generator.append($('<input />', {
+      'class' : 'fff-widget-generator-btn',
       'type' : 'button',
       'value' : 'Generate widget code'
-    }).click(function(e) {
-      e.stopPropagation();
-      e.preventDefault();
-      fff_code_generator();
-      return false;
     }));
 
-    // Apped the form.
-    target.append(generator);
+    // Insert generator.
+    var target = $('a[name=node-525]').parent();
+    target.append(generatorWrapper.append(generator));
+    generatorWrapper.fadeIn();
+
+    // Code wrapper
+    var codeWrapper = $('<div />', {'id' : 'fff-widget-code-wrapper'}).hide();
+    var code = $('<pre />', {'id' : 'fff-widget-code'});
+    codeWrapper.append(code);
+    codeWrapper.append($('<input />', {
+      'type' : 'button',
+      'value' : 'Try another configuration'
+    }).click(function (e) {
+      e.stopPropagation();
+      e.preventDefault();
+
+      codeWrapper.fadeOut(function() {
+        // Insert generator.
+        generatorWrapper.fadeIn();
+      });
+    }));
+
+    target.append(codeWrapper);
+
+    $('.fff-widget-generator-btn').click(function(e) {
+      e.stopPropagation();
+      e.preventDefault();
+
+      // Generate code and insert into
+      code.text(fff_code_generator());
+
+      // If code is click select all.
+      codeWrapper.click(function() {
+        // @todo
+      });
+
+      generatorWrapper.fadeOut(function() {
+        // Insert code.
+        codeWrapper.fadeIn();
+      });
+
+      return false;
+    });
+
+
   });
 
   function fff_code_generator() {
@@ -123,33 +162,29 @@
     var type = $('#fff-widget-generator select[name="type"]').val();
     var style = $('#fff-widget-generator select[name="style"]').val();
     var color = $('#fff-widget-generator input[@name="color"]:checked').val();
-    
+
     // Generate widget configuration.
-    var config = "var fffWidgetConfig = [];\n";
-    config += "fffWidgetConfig.push({\n";
-    config += "  'widget' : '"+type+"',\n";
-    config += "  'target' : '"+target+"',\n";
-    config += "  'style' : {\n";
-    config += "    'type' : '"+style+"',\n";
-    config += "    'color' : '"+color+"'\n";
-    config += "  },\n";
-    config += "  'tracking' : true,\n";
-    config += "  'button' : {\n";
-    config += "     'reload' : true\n";
-    config += "  },\n";
-    config += "  'event' : {\n";
-    config += "    'loadComplet' : null\n";
-    config += "  }\n";
-    config += "});\n\n";
-    
-    var load = "(function() {\n";
-    load += "  var fff = document.createElement('script'); fff.type = 'text/javascript'; fff.async = true;\n";
-    load += "  fff.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'service.finurligefakta.dk/widgets/fff.widget.js';\n";
-    load += "  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(fff, s);\n";
-    load += "})();"
-    
-    console.log(config + load);
-    return config;
+    var config = "  var fffWidgetConfig = [];\n";
+    config += "  fffWidgetConfig.push({\n";
+    config += "    'widget' : '"+type+"',\n";
+    config += "    'target' : '"+target+"',\n";
+    config += "    'style' : {\n";
+    config += "      'type' : '"+style+"',\n";
+    config += "      'color' : '"+color+"'\n";
+    config += "    },\n";
+    config += "    'tracking' : true,\n";
+    config += "    'button' : { 'reload' : true },\n";
+    config += "    'event' : { 'loadComplet' : null }\n";
+    config += "  });\n\n";
+
+    // Generate widget load code.
+    var load = "  (function() {\n";
+    load += "    var fff = document.createElement('script'); fff.type = 'text/javascript'; fff.async = true;\n";
+    load += "    fff.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'service.finurligefakta.dk/widgets/fff.widget.js';  \n";
+    load += "    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(fff, s);\n";
+    load += "  })();\n";
+
+    return "<script type=\"text/javascript\">\n" + config + load + "</script>\n";
   }
 
 }(jQuery));
