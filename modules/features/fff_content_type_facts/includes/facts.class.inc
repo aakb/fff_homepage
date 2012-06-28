@@ -31,7 +31,7 @@ class FactsParser extends FeedsParser {
       $data['inspirename'] = (string)$item->inspirename;      
       $data['inspirelink'] = (string)$item->inspirelink;
       $data['author'] = (string)$item->author;
-      $data['org'] = (string)$item->org;
+      $data['orgnization'] = (string)$item->org;
       $data['tags'] = array((string)$item->subject1, (string)$item->subject2, (string)$item->subject3, (string)$item->subject4);
       $data['unixtime'] = (string)$item->unixtime;
       
@@ -50,7 +50,7 @@ class FactsParser extends FeedsParser {
       'inspirename', 
       'inspirelink', 
       'author', 
-      'org', 
+      'orgnization',
       'tags',
       'unixtime',
     );
