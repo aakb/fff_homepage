@@ -58,7 +58,7 @@
               }).append($('<input />', {
                 'type' : 'radio',
                 'name' : 'color',
-                'value' : 'red',
+                'value' : 'default',
                 'checked' :'checked'
               }));
 

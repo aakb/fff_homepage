@@ -90,7 +90,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 /* line 9, ../sass/typography.scss */
 body {
   color: #525252;
-  font-family: "PTSansRegular";
+  font-family: PTSansRegular, arial, sans-serif;
   font-size: 15px;
 }
 
@@ -113,13 +113,13 @@ em, i {
 }
 /* line 30, ../sass/typography.scss */
 .view-frontpage-steps .step-text {
-  font-family: "akaDora";
+  font-family: akaDora;
   font-size: 31px;
   color: #fd7058;
 }
 /* line 35, ../sass/typography.scss */
 .view-frontpage-steps .counter {
-  font-family: "mgOpenModerna";
+  font-family: mgOpenModerna;
   font-size: 100px;
   color: #b8b8b8;
 }
