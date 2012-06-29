@@ -103,6 +103,16 @@
                      .append(orange)
                      .append(turquioise));
 
+    generator.append($('<label />', {
+      'text' : 'Tillad tracking af forbrug (Google Analytices)'
+    }).append($('<input />', {
+      'type' : 'checkbox',
+      'name' : 'tracking',
+      'checked' : 'checked',
+      'value' : 'tracking',
+      'class' : 'tracking'
+    })));
+
     // Add submit handler.
     generator.append($('<input />', {
       'class' : 'fff-widget-generator-btn',

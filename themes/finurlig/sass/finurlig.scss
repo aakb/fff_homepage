@@ -186,20 +186,25 @@ footer {
       input, select {
         margin: 4px 0 4px 8px;
       }
+      .tracking {
+        float: left;
+        position: relative;
+        top: -5px;
+        margin-right: 8px;
+      }
     }
     fieldset {
       border: 2px groove #F0F0F0;
       margin: 8px;
-      legend {
-  /*      padding-bottom: 4px;
-        padding-left: 8px;*/
-      }
       label {
         input {
           float: left;
           margin-right: 8px;
         }
       }
+    }
+    .fff-widget-generator-btn {
+      margin-top: 10px;
     }
   }
 }

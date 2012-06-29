@@ -355,23 +355,29 @@ footer .content a:hover {
 .fff-widget-generator-wrapper #fff-widget-generator label input, .fff-widget-generator-wrapper #fff-widget-generator label select {
   margin: 4px 0 4px 8px;
 }
-/* line 190, ../sass/finurlig.scss */
+/* line 189, ../sass/finurlig.scss */
+.fff-widget-generator-wrapper #fff-widget-generator label .tracking {
+  float: left;
+  position: relative;
+  top: -5px;
+  margin-right: 8px;
+}
+/* line 196, ../sass/finurlig.scss */
 .fff-widget-generator-wrapper #fff-widget-generator fieldset {
   border: 2px groove #F0F0F0;
   margin: 8px;
 }
-/* line 193, ../sass/finurlig.scss */
-.fff-widget-generator-wrapper #fff-widget-generator fieldset legend {
-  /*      padding-bottom: 4px;
-        padding-left: 8px;*/
-}
-/* line 198, ../sass/finurlig.scss */
+/* line 200, ../sass/finurlig.scss */
 .fff-widget-generator-wrapper #fff-widget-generator fieldset label input {
   float: left;
   margin-right: 8px;
 }
+/* line 206, ../sass/finurlig.scss */
+.fff-widget-generator-wrapper #fff-widget-generator .fff-widget-generator-btn {
+  margin-top: 10px;
+}
 
-/* line 208, ../sass/finurlig.scss */
+/* line 213, ../sass/finurlig.scss */
 #fff-widget-code-wrapper #fff-widget-code {
   background-color: #FFF;
   border: 2px groove #F0F0F0;
