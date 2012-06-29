@@ -71,18 +71,18 @@ function fff_content_type_facts_feeds_importer_default() {
             'unique' => FALSE,
           ),
           7 => array(
-            'source' => 'org',
-            'target' => 'field_fact_organization',
-            'unique' => FALSE,
-          ),
-          8 => array(
             'source' => 'tags',
             'target' => 'field_fact_tags',
             'unique' => FALSE,
           ),
-          9 => array(
+          8 => array(
             'source' => 'inspirelink',
             'target' => 'field_fact_inspiration:url',
+            'unique' => FALSE,
+          ),
+          9 => array(
+            'source' => 'orgnization',
+            'target' => 'field_fact_organization',
             'unique' => FALSE,
           ),
         ),

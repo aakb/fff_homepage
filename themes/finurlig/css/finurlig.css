@@ -90,7 +90,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 /* line 9, ../sass/typography.scss */
 body {
   color: #525252;
-  font-family: "PTSansRegular";
+  font-family: PTSansRegular, arial, sans-serif;
   font-size: 15px;
 }
 
@@ -113,13 +113,13 @@ em, i {
 }
 /* line 30, ../sass/typography.scss */
 .view-frontpage-steps .step-text {
-  font-family: "akaDora";
+  font-family: akaDora;
   font-size: 31px;
   color: #fd7058;
 }
 /* line 35, ../sass/typography.scss */
 .view-frontpage-steps .counter {
-  font-family: "mgOpenModerna";
+  font-family: mgOpenModerna;
   font-size: 100px;
   color: #b8b8b8;
 }
@@ -343,4 +343,45 @@ footer .content a:hover {
 /* line 174, ../sass/finurlig.scss */
 .align-left img {
   margin-top: 0;
+}
+
+/* line 182, ../sass/finurlig.scss */
+.fff-widget-generator-wrapper #fff-widget-generator label {
+  clear: both;
+  width: 100%;
+  display: block;
+}
+/* line 186, ../sass/finurlig.scss */
+.fff-widget-generator-wrapper #fff-widget-generator label input, .fff-widget-generator-wrapper #fff-widget-generator label select {
+  margin: 4px 0 4px 8px;
+}
+/* line 189, ../sass/finurlig.scss */
+.fff-widget-generator-wrapper #fff-widget-generator label .tracking {
+  float: left;
+  position: relative;
+  top: -5px;
+  margin-right: 8px;
+}
+/* line 196, ../sass/finurlig.scss */
+.fff-widget-generator-wrapper #fff-widget-generator fieldset {
+  border: 2px groove #F0F0F0;
+  margin: 8px;
+}
+/* line 200, ../sass/finurlig.scss */
+.fff-widget-generator-wrapper #fff-widget-generator fieldset label input {
+  float: left;
+  margin-right: 8px;
+}
+/* line 206, ../sass/finurlig.scss */
+.fff-widget-generator-wrapper #fff-widget-generator .fff-widget-generator-btn {
+  margin-top: 10px;
+}
+
+/* line 213, ../sass/finurlig.scss */
+#fff-widget-code-wrapper #fff-widget-code {
+  background-color: #FFF;
+  border: 2px groove #F0F0F0;
+  height: 320px;
+  overflow: auto;
+  margin-bottom: 8px;
 }

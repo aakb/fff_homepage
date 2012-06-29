@@ -74,8 +74,8 @@ header {
     height: 45px;
     width: 45px;
     background: transparent no-repeat url('../images/quotes.png');
-    position: absolute; 
-    top: -40px; 
+    position: absolute;
+    top: -40px;
     left: -60px;
   }
   .fffW-title {
@@ -150,7 +150,7 @@ footer {
     height: 50px;
   }
   .content {
-    color: lighten($color-header-light, 10%); 
+    color: lighten($color-header-light, 10%);
     margin-top: 15px; // Fix this with % later
     a {
       @include link-colors($color-header-light, lighten($color-header-light, 10%));
@@ -173,5 +173,48 @@ footer {
   margin-right: 1em;
   img {
     margin-top: 0;
+  }
+}
+
+// Handle widget generator code.
+.fff-widget-generator-wrapper {
+  #fff-widget-generator {
+    label {
+      clear: both;
+      width: 100%;
+      display: block;
+      input, select {
+        margin: 4px 0 4px 8px;
+      }
+      .tracking {
+        float: left;
+        position: relative;
+        top: -5px;
+        margin-right: 8px;
+      }
+    }
+    fieldset {
+      border: 2px groove #F0F0F0;
+      margin: 8px;
+      label {
+        input {
+          float: left;
+          margin-right: 8px;
+        }
+      }
+    }
+    .fff-widget-generator-btn {
+      margin-top: 10px;
+    }
+  }
+}
+
+#fff-widget-code-wrapper {
+  #fff-widget-code {
+    background-color: #FFF;
+    border: 2px groove #F0F0F0;
+    height: 320px;
+    overflow: auto;
+    margin-bottom: 8px;
   }
 }
