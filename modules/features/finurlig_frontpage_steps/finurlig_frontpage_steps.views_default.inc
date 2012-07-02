@@ -211,6 +211,41 @@ function finurlig_frontpage_steps_views_default_views() {
   $handler->display->display_options['fields']['field_step_content']['empty_zero'] = 0;
   $handler->display->display_options['fields']['field_step_content']['hide_alter_empty'] = 1;
   $handler->display->display_options['fields']['field_step_content']['field_api_classes'] = 0;
+  /* Felt: Indhold: Screenshots */
+  $handler->display->display_options['fields']['field_step_images']['id'] = 'field_step_images';
+  $handler->display->display_options['fields']['field_step_images']['table'] = 'field_data_field_step_images';
+  $handler->display->display_options['fields']['field_step_images']['field'] = 'field_step_images';
+  $handler->display->display_options['fields']['field_step_images']['label'] = '';
+  $handler->display->display_options['fields']['field_step_images']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_step_images']['alter']['alter_text'] = 0;
+  $handler->display->display_options['fields']['field_step_images']['alter']['make_link'] = 0;
+  $handler->display->display_options['fields']['field_step_images']['alter']['absolute'] = 0;
+  $handler->display->display_options['fields']['field_step_images']['alter']['external'] = 0;
+  $handler->display->display_options['fields']['field_step_images']['alter']['replace_spaces'] = 0;
+  $handler->display->display_options['fields']['field_step_images']['alter']['trim_whitespace'] = 0;
+  $handler->display->display_options['fields']['field_step_images']['alter']['nl2br'] = 0;
+  $handler->display->display_options['fields']['field_step_images']['alter']['word_boundary'] = 1;
+  $handler->display->display_options['fields']['field_step_images']['alter']['ellipsis'] = 1;
+  $handler->display->display_options['fields']['field_step_images']['alter']['more_link'] = 0;
+  $handler->display->display_options['fields']['field_step_images']['alter']['strip_tags'] = 0;
+  $handler->display->display_options['fields']['field_step_images']['alter']['trim'] = 0;
+  $handler->display->display_options['fields']['field_step_images']['alter']['html'] = 0;
+  $handler->display->display_options['fields']['field_step_images']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_step_images']['element_default_classes'] = 0;
+  $handler->display->display_options['fields']['field_step_images']['hide_empty'] = 0;
+  $handler->display->display_options['fields']['field_step_images']['empty_zero'] = 0;
+  $handler->display->display_options['fields']['field_step_images']['hide_alter_empty'] = 1;
+  $handler->display->display_options['fields']['field_step_images']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_step_images']['settings'] = array(
+    'image_style' => 'screenshot',
+    'image_link' => 'file',
+  );
+  $handler->display->display_options['fields']['field_step_images']['group_rows'] = 1;
+  $handler->display->display_options['fields']['field_step_images']['delta_offset'] = '0';
+  $handler->display->display_options['fields']['field_step_images']['delta_reversed'] = 0;
+  $handler->display->display_options['fields']['field_step_images']['delta_first_last'] = 0;
+  $handler->display->display_options['fields']['field_step_images']['separator'] = '';
+  $handler->display->display_options['fields']['field_step_images']['field_api_classes'] = 0;
   /* Felt: Indhold: Ikon */
   $handler->display->display_options['fields']['field_step_ikon']['id'] = 'field_step_ikon';
   $handler->display->display_options['fields']['field_step_ikon']['table'] = 'field_data_field_step_ikon';
@@ -250,7 +285,8 @@ function finurlig_frontpage_steps_views_default_views() {
   $handler->display->display_options['fields']['nothing_1']['ui_name'] = 'Custom: content';
   $handler->display->display_options['fields']['nothing_1']['label'] = '';
   $handler->display->display_options['fields']['nothing_1']['alter']['text'] = '<span class="text"><a name="node-[nid]"><h2>[title]</h2></a>[field_step_content]</span>
-<span class="icon">[field_step_ikon]</span>';
+<span class="icon">[field_step_ikon]</span>
+<span class="screenshots">[field_step_images]</span>';
   $handler->display->display_options['fields']['nothing_1']['alter']['make_link'] = 0;
   $handler->display->display_options['fields']['nothing_1']['alter']['absolute'] = 0;
   $handler->display->display_options['fields']['nothing_1']['alter']['external'] = 0;
@@ -331,7 +367,8 @@ function finurlig_frontpage_steps_views_default_views() {
     t('Step'),
     t('<span class="step-text">[nothing]</span><span class="counter">[counter]</span>'),
     t('<span class="text"><a name="node-[nid]"><h2>[title]</h2></a>[field_step_content]</span>
-<span class="icon">[field_step_ikon]</span>'),
+<span class="icon">[field_step_ikon]</span>
+<span class="screenshots">[field_step_images]</span>'),
     t('Front page'),
     t('The sites frontpage steps'),
   );
