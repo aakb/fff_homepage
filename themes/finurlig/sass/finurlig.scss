@@ -161,6 +161,7 @@ footer {
   .zone-footer-wrapper {
     @include rgba-background($color-header-dark, .75);
     height: 50px;
+    text-align: center;
   }
   .content {
     color: lighten($color-header-light, 10%);

@@ -328,13 +328,14 @@ footer .zone-footer-wrapper {
   zoom: 1;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#BF000000,endColorstr=#BF000000);
   height: 50px;
+  text-align: center;
 }
-/* line 165, ../sass/finurlig.scss */
+/* line 166, ../sass/finurlig.scss */
 footer .content {
   color: #a2a2a2;
   margin-top: 15px;
 }
-/* line 168, ../sass/finurlig.scss */
+/* line 169, ../sass/finurlig.scss */
 footer .content a {
   color: #888888;
   text-decoration: none;
@@ -348,59 +349,59 @@ footer .content a:hover {
   text-decoration: underline;
 }
 
-/* line 176, ../sass/finurlig.scss */
+/* line 177, ../sass/finurlig.scss */
 .align-right {
   float: right;
   margin-left: 1em;
 }
-/* line 179, ../sass/finurlig.scss */
+/* line 180, ../sass/finurlig.scss */
 .align-right img {
   margin-top: 0;
 }
 
-/* line 184, ../sass/finurlig.scss */
+/* line 185, ../sass/finurlig.scss */
 .align-left {
   float: left;
   margin-right: 1em;
 }
-/* line 187, ../sass/finurlig.scss */
+/* line 188, ../sass/finurlig.scss */
 .align-left img {
   margin-top: 0;
 }
 
-/* line 195, ../sass/finurlig.scss */
+/* line 196, ../sass/finurlig.scss */
 .fff-widget-generator-wrapper #fff-widget-generator label {
   clear: both;
   width: 100%;
   display: block;
 }
-/* line 199, ../sass/finurlig.scss */
+/* line 200, ../sass/finurlig.scss */
 .fff-widget-generator-wrapper #fff-widget-generator label input, .fff-widget-generator-wrapper #fff-widget-generator label select {
   margin: 4px 0 4px 8px;
 }
-/* line 202, ../sass/finurlig.scss */
+/* line 203, ../sass/finurlig.scss */
 .fff-widget-generator-wrapper #fff-widget-generator label .tracking {
   float: left;
   position: relative;
   top: -5px;
   margin-right: 8px;
 }
-/* line 209, ../sass/finurlig.scss */
+/* line 210, ../sass/finurlig.scss */
 .fff-widget-generator-wrapper #fff-widget-generator fieldset {
   border: 2px groove #F0F0F0;
   margin: 8px;
 }
-/* line 213, ../sass/finurlig.scss */
+/* line 214, ../sass/finurlig.scss */
 .fff-widget-generator-wrapper #fff-widget-generator fieldset label input {
   float: left;
   margin-right: 8px;
 }
-/* line 219, ../sass/finurlig.scss */
+/* line 220, ../sass/finurlig.scss */
 .fff-widget-generator-wrapper #fff-widget-generator .fff-widget-generator-btn {
   margin-top: 10px;
 }
 
-/* line 226, ../sass/finurlig.scss */
+/* line 227, ../sass/finurlig.scss */
 #fff-widget-code-wrapper #fff-widget-code {
   background-color: #FFF;
   border: 2px groove #F0F0F0;
