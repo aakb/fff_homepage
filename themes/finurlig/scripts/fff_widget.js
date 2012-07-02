@@ -2,6 +2,9 @@ var fffWidgetConfig = [];
 fffWidgetConfig.push({
   'widget' : 'interactive',
   'target' : '#fff-widget',
+  'style' : {
+    'type' : 'hacked'
+  },
   'event' : {
     'loadComplet' : function () {
       (function($) {
