@@ -112,12 +112,18 @@ em, i {
   letter-spacing: 0em;
 }
 /* line 30, ../sass/typography.scss */
+.view-frontpage-steps h3 {
+  color: #fd4412;
+  font-weight: bold;
+  letter-spacing: 0em;
+}
+/* line 35, ../sass/typography.scss */
 .view-frontpage-steps .step-text {
   font-family: akaDora;
   font-size: 31px;
   color: #fd7058;
 }
-/* line 35, ../sass/typography.scss */
+/* line 40, ../sass/typography.scss */
 .view-frontpage-steps .counter {
   font-family: mgOpenModerna;
   font-size: 100px;
@@ -248,70 +254,83 @@ header .zone-branding-wrapper .site-logo {
 #fff-widget .fffw-button-reload:hover {
   background: transparent no-repeat url("../images/icon_reload.png") 0 0;
 }
+/* line 101, ../sass/finurlig.scss */
+#fff-widget .fffW-slogan {
+  display: none;
+}
 
-/* line 105, ../sass/finurlig.scss */
+/* line 108, ../sass/finurlig.scss */
 .section-content p {
   margin-bottom: 1em;
 }
-/* line 109, ../sass/finurlig.scss */
+/* line 112, ../sass/finurlig.scss */
 .section-content .view-frontpage-steps {
   float: left;
 }
-/* line 111, ../sass/finurlig.scss */
-.section-content .view-frontpage-steps li {
+/* line 114, ../sass/finurlig.scss */
+.section-content .view-frontpage-steps li.step {
   clear: left;
   float: left;
   padding: 60px 0;
   background: transparent url("../images/dashes.png") repeat-x left bottom;
 }
-/* line 116, ../sass/finurlig.scss */
-.section-content .view-frontpage-steps li.views-row-last {
+/* line 119, ../sass/finurlig.scss */
+.section-content .view-frontpage-steps li.step.views-row-last {
   background: none;
 }
-/* line 119, ../sass/finurlig.scss */
-.section-content .view-frontpage-steps li .step {
+/* line 122, ../sass/finurlig.scss */
+.section-content .view-frontpage-steps li.step .step {
   float: left;
   width: 13.541666666667%;
 }
-/* line 122, ../sass/finurlig.scss */
-.section-content .view-frontpage-steps li .step .step-text {
+/* line 125, ../sass/finurlig.scss */
+.section-content .view-frontpage-steps li.step .step .step-text {
   position: relative;
   top: -35px;
 }
-/* line 127, ../sass/finurlig.scss */
-.section-content .view-frontpage-steps li .step-content-wrapper {
+/* line 130, ../sass/finurlig.scss */
+.section-content .view-frontpage-steps li.step .step-content-wrapper {
   float: left;
   width: 79.042553191489%;
 }
-/* line 130, ../sass/finurlig.scss */
-.section-content .view-frontpage-steps li .step-content-wrapper h2 {
+/* line 133, ../sass/finurlig.scss */
+.section-content .view-frontpage-steps li.step .step-content-wrapper h2 {
   padding-top: 8px;
   margin-bottom: 30px;
 }
-/* line 134, ../sass/finurlig.scss */
-.section-content .view-frontpage-steps li .step-content-wrapper .text {
+/* line 137, ../sass/finurlig.scss */
+.section-content .view-frontpage-steps li.step .step-content-wrapper .text {
   float: left;
   width: 60.354430379747%;
 }
-/* line 138, ../sass/finurlig.scss */
-.section-content .view-frontpage-steps li .step-content-wrapper .icon {
+/* line 140, ../sass/finurlig.scss */
+.section-content .view-frontpage-steps li.step .step-content-wrapper .text ul {
+  list-style: disc inside none;
+  margin-bottom: 8px;
+}
+/* line 143, ../sass/finurlig.scss */
+.section-content .view-frontpage-steps li.step .step-content-wrapper .text ul li {
+  margin-bottom: 2px;
+}
+/* line 148, ../sass/finurlig.scss */
+.section-content .view-frontpage-steps li.step .step-content-wrapper .icon {
   float: right;
   width: 31.645569620253%;
 }
 
-/* line 148, ../sass/finurlig.scss */
+/* line 158, ../sass/finurlig.scss */
 footer .zone-footer-wrapper {
   background-color: rgba(0, 0, 0, 0.75);
   zoom: 1;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#BF000000,endColorstr=#BF000000);
   height: 50px;
 }
-/* line 152, ../sass/finurlig.scss */
+/* line 162, ../sass/finurlig.scss */
 footer .content {
   color: #a2a2a2;
   margin-top: 15px;
 }
-/* line 155, ../sass/finurlig.scss */
+/* line 165, ../sass/finurlig.scss */
 footer .content a {
   color: #888888;
   text-decoration: none;
@@ -325,59 +344,59 @@ footer .content a:hover {
   text-decoration: underline;
 }
 
-/* line 163, ../sass/finurlig.scss */
+/* line 173, ../sass/finurlig.scss */
 .align-right {
   float: right;
   margin-left: 1em;
 }
-/* line 166, ../sass/finurlig.scss */
+/* line 176, ../sass/finurlig.scss */
 .align-right img {
   margin-top: 0;
 }
 
-/* line 171, ../sass/finurlig.scss */
+/* line 181, ../sass/finurlig.scss */
 .align-left {
   float: left;
   margin-right: 1em;
 }
-/* line 174, ../sass/finurlig.scss */
+/* line 184, ../sass/finurlig.scss */
 .align-left img {
   margin-top: 0;
 }
 
-/* line 182, ../sass/finurlig.scss */
+/* line 192, ../sass/finurlig.scss */
 .fff-widget-generator-wrapper #fff-widget-generator label {
   clear: both;
   width: 100%;
   display: block;
 }
-/* line 186, ../sass/finurlig.scss */
+/* line 196, ../sass/finurlig.scss */
 .fff-widget-generator-wrapper #fff-widget-generator label input, .fff-widget-generator-wrapper #fff-widget-generator label select {
   margin: 4px 0 4px 8px;
 }
-/* line 189, ../sass/finurlig.scss */
+/* line 199, ../sass/finurlig.scss */
 .fff-widget-generator-wrapper #fff-widget-generator label .tracking {
   float: left;
   position: relative;
   top: -5px;
   margin-right: 8px;
 }
-/* line 196, ../sass/finurlig.scss */
+/* line 206, ../sass/finurlig.scss */
 .fff-widget-generator-wrapper #fff-widget-generator fieldset {
   border: 2px groove #F0F0F0;
   margin: 8px;
 }
-/* line 200, ../sass/finurlig.scss */
+/* line 210, ../sass/finurlig.scss */
 .fff-widget-generator-wrapper #fff-widget-generator fieldset label input {
   float: left;
   margin-right: 8px;
 }
-/* line 206, ../sass/finurlig.scss */
+/* line 216, ../sass/finurlig.scss */
 .fff-widget-generator-wrapper #fff-widget-generator .fff-widget-generator-btn {
   margin-top: 10px;
 }
 
-/* line 213, ../sass/finurlig.scss */
+/* line 223, ../sass/finurlig.scss */
 #fff-widget-code-wrapper #fff-widget-code {
   background-color: #FFF;
   border: 2px groove #F0F0F0;

@@ -98,6 +98,9 @@ header {
       background: transparent no-repeat url('../images/icon_reload.png') 0 0;
     }
   }
+  .fffW-slogan {
+    display: none;
+  }
 }
 
 // Style steps on frontpage.
@@ -108,7 +111,7 @@ header {
 
   .view-frontpage-steps {
     float: left;
-    li {
+    li.step {
       clear: left;
       float: left;
       padding: 60px 0;
@@ -133,8 +136,15 @@ header {
         }
         .text {
           float: left;
-          width: 60.354430379747%;
-        }
+          width: 60.354430379747%;          
+          ul {
+            list-style: disc inside none;
+            margin-bottom: 8px;
+            li {
+              margin-bottom: 2px;           
+            }
+          }
+        }        
         .icon {
           float: right;
           width: 31.645569620253%;
