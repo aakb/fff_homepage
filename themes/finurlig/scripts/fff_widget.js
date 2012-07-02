@@ -18,6 +18,6 @@ fffWidgetConfig.push({
   "use strict";
   
   var fff = document.createElement('script');fff.type = 'text/javascript';fff.async = true;
-  fff.src = ('https:' === document.location.protocol ? 'https://' : 'http://') + 'service.finurligefakta.dk/widgets/fff.widget.js';
+  fff.src = ('https:' === document.location.protocol ? 'https://' : 'http://') + 'service.finurligefakta.dk/widgets/fff.widget.min.js';
   var s = document.getElementsByTagName('script')[0];s.parentNode.insertBefore(fff, s);
 })();

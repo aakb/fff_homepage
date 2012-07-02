@@ -207,7 +207,7 @@
     // Generate widget load code.
     var load = "  (function() {\n";
     load += "    var fff = document.createElement('script'); fff.type = 'text/javascript'; fff.async = true;\n";
-    load += "    fff.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'service.finurligefakta.dk/widgets/fff.widget.js';  \n";
+    load += "    fff.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'service.finurligefakta.dk/widgets/fff.widget.min.js';  \n";
     load += "    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(fff, s);\n";
     load += "  })();\n";
 
