@@ -41,6 +41,9 @@
     }).append($('<select />', {
                 'name' : 'style'
               }).append($('<option />', {
+                'value' : 'none',
+                'text' : 'None'
+              })).append($('<option />', {
                 'value' : 'minimal',
                 'text' : 'Minimal'
               })).append($('<option />', {
@@ -117,7 +120,7 @@
     generator.append($('<input />', {
       'class' : 'fff-widget-generator-btn',
       'type' : 'button',
-      'value' : 'Generate widget code'
+      'value' : 'Generer kode'
     }));
 
     // Insert generator.
@@ -131,7 +134,7 @@
     codeWrapper.append(code);
     codeWrapper.append($('<input />', {
       'type' : 'button',
-      'value' : 'Try another configuration'
+      'value' : 'Prøv med en anden konfiguration'
     }).click(function (e) {
       e.stopPropagation();
       e.preventDefault();
@@ -153,7 +156,20 @@
 
       // If code is click select all.
       codeWrapper.click(function() {
-        // @todo
+        var doc = document;
+        var text = doc.getElementById('fff-widget-code');
+
+        if (doc.body.createTextRange) { // ms
+            var range = doc.body.createTextRange();
+            range.moveToElementText(text);
+            range.select();
+        } else if (window.getSelection) { // moz, opera, webkit
+            var selection = window.getSelection();
+            var range = doc.createRange();
+            range.selectNodeContents(text);
+            selection.removeAllRanges();
+            selection.addRange(range);
+        }
       });
 
       generatorWrapper.fadeOut(function() {
