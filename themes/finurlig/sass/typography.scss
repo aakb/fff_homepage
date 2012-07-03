@@ -37,6 +37,15 @@ em, i {
     font-size: 31px;
     color: $color-step;
   }
+  .text {
+    dt {
+     color: $color-headlines;
+     font-weight: bold;
+    }
+    dd {
+      font-style: italic;
+    }
+  }
   .counter {
     font-family: mgOpenModerna;
     font-size: 100px;
