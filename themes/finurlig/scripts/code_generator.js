@@ -57,7 +57,7 @@
 
     // Add color options.
     var red = $('<label />', {
-                'text' : 'Red'
+                'text' : 'Rød'
               }).append($('<input />', {
                 'type' : 'radio',
                 'name' : 'color',
@@ -66,7 +66,7 @@
               }));
 
     var green = $('<label />', {
-                'text' : 'Green'
+                'text' : 'Grøn'
               }).append($('<input />', {
                 'type' : 'radio',
                 'name' : 'color',
@@ -74,7 +74,7 @@
               }));
 
     var blue = $('<label />', {
-                'text' : 'Blue'
+                'text' : 'Blå'
               }).append($('<input />', {
                 'type' : 'radio',
                 'name' : 'color',
@@ -89,22 +89,22 @@
                 'value' : 'orange'
               }));
 
-    var turquioise = $('<label />', {
-                'text' : 'Turquioise'
+    var turquoise = $('<label />', {
+                'text' : 'Turkis'
               }).append($('<input />', {
                 'type' : 'radio',
                 'name' : 'color',
-                'value' : 'turquioise'
+                'value' : 'turquoise'
               }));
 
     generator.append($('<fieldset />').append($('<legend />', {
-                       'text' : 'Colors'
+                       'text' : 'Farver'
                      }))
                      .append(red)
                      .append(green)
                      .append(blue)
                      .append(orange)
-                     .append(turquioise));
+                     .append(turquoise));
 
     generator.append($('<label />', {
       'text' : 'Tillad tracking af forbrug (Google Analytices)'
