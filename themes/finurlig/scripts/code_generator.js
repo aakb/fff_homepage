@@ -111,8 +111,7 @@
     }).append($('<input />', {
       'type' : 'checkbox',
       'name' : 'tracking',
-      'checked' : 'checked',
-      'value' : 'tracking',
+      'value' : 'true',
       'class' : 'tracking'
     })));
 
@@ -189,6 +188,7 @@
     var type = $('#fff-widget-generator select[name="type"]').val();
     var style = $('#fff-widget-generator select[name="style"]').val();
     var color = $('#fff-widget-generator input[@name="color"]:checked').val();
+    var tracking = $('#fff-widget-generator .tracking:checked').val();
 
     // Generate widget configuration.
     var config = "  var fffWidgetConfig = [];\n";
@@ -199,7 +199,7 @@
     config += "      'type' : '"+style+"',\n";
     config += "      'color' : '"+color+"'\n";
     config += "    },\n";
-    config += "    'tracking' : true,\n";
+    config += "    'tracking' : "+(tracking === undefined ? 'false' : 'true')+"\n";
     config += "    'button' : { 'reload' : true },\n";
     config += "    'event' : { 'loadComplet' : null }\n";
     config += "  });\n\n";
