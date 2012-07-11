@@ -200,7 +200,7 @@
     config += "      'type' : '"+style+"',\n";
     config += "      'color' : '"+color+"'\n";
     config += "    },\n";
-    config += "    'tracking' : "+(tracking === undefined ? 'false' : 'true')+"\n";
+    config += "    'tracking' : "+(tracking === undefined ? 'false' : 'true')+",\n";
     config += "    'button' : { 'reload' : true },\n";
     config += "    'event' : { 'loadComplet' : null }\n";
     config += "  });\n\n";
