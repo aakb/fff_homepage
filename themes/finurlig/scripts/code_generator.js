@@ -111,6 +111,7 @@
     }).append($('<input />', {
       'type' : 'checkbox',
       'name' : 'tracking',
+      'checked' : 'checked',
       'value' : 'true',
       'class' : 'tracking'
     })));
