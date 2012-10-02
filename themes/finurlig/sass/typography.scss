@@ -53,3 +53,19 @@ em, i {
     color: lighten($color-text, 40%);
   }
 }
+
+/* Widget demo page styles */
+
+.region-content h1.title {
+  color: $color-headlines;
+  font-size: 25px;
+  font-weight: bold;
+  letter-spacing: 0em;
+  margin-bottom: 1em;
+}
+.region-content h3 {
+  color: $color-headlines;
+  font-weight: bold;
+  letter-spacing: 0em;
+  margin-bottom:1em;
+}
