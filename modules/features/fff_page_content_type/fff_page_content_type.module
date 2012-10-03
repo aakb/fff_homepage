@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the FFF Page content type feature.
+ */
+
+include_once 'fff_page_content_type.features.inc';

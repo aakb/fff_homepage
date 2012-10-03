@@ -214,6 +214,7 @@ footer {
     fieldset {
       border: 2px groove #F0F0F0;
       margin: 8px;
+      margin-left:0;
       label {
         input {
           float: left;
@@ -235,4 +236,25 @@ footer {
     overflow: auto;
     margin-bottom: 8px;
   }
+}
+
+/* Widget demo page styles */
+
+.region-content {
+  padding-top:60px;
+}
+
+.fff-widget-generator-wrapper,
+.demo-wrapper {
+  float: left;
+  width: 50%;
+}
+.fff-widget-generator-wrapper {
+  width:45%;
+  margin-right: 1em;
+}
+hr.divider {
+  background: transparent url("../images/dashes.png") repeat-x left bottom;
+  height: 5px;
+  width: 100%;
 }
