@@ -10,7 +10,8 @@ function finurlig_preprocess_page(&$variables) {
 	// Assuming that page of type page is always the widget demo page
 	if (isset($variables['node']) && $variables['node']->nid == 1058) {
 	  drupal_add_js(drupal_get_path('theme', 'finurlig') .'/scripts/widget_demo.js', 'file');
-	} else {
+	}
+  else {
 	  drupal_add_js(drupal_get_path('theme', 'finurlig') .'/scripts/fff_widget.js', 'file');
 	}
 }

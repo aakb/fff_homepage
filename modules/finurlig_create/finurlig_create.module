@@ -34,16 +34,130 @@ function finurlig_create_menu() {
   return $items;
 }
 
+/**
+ * Callback that returns the create fact node form as JSONP.
+ */
 function finurlig_create_fact() {
+  $form_id = 'finurlig_crate_fact_form';
 
-  module_load_include('inc', 'node', 'node.pages');
-  $form = node_add('fact');
+  // Get user login form.
+  $form = drupal_get_form($form_id);
+  echo render($form);
+  exit();
+}
 
-  $status = array(
-    'status' => 'create',
-    'title' => t('Create new fact'),
-    'content' => render($form),
+function finurlig_crate_fact_form() {
+  $form = array();
+
+  $form['title'] = array (
+    '#type' => 'textfield',
+    '#title' => t('Title'),
+    '#attribute' => array('placeholder' => 'test'),
   );
 
-  drupal_json_output($status);
+  $form['author'] = array (
+    '#type' => 'textfield',
+    '#title' => t('Author'),
+  );
+
+  $form['fact'] = array(
+    '#type' => 'textarea',
+    '#title' => t('Fact'),
+  );
+
+  $form['inspiration'] = array(
+    '#type' => 'fieldset',
+    '#title' => t('Inspiration'),
+  );
+
+  $form['inspiration']['inspiration_title'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Title'),
+  );
+
+  $form['inspiration']['inspiration_link'] = array(
+    '#type' => 'textfield',
+    '#title' => t('link'),
+  );
+
+  $form['source'] = array(
+    '#type' => 'fieldset',
+    '#title' => t('Source'),
+  );
+
+  $form['source']['source_title'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Title'),
+  );
+
+  $form['source']['source_link'] = array(
+    '#type' => 'textfield',
+    '#title' => t('link'),
+  );
+
+  $form['submit'] = array(
+    '#type' => 'submit',
+    '#value' => t('Create'),
+  );
+
+  $form['#validate'][] = 'finurlig_crate_fact_form_validate';
+
+  return $form;
+}
+
+function finurlig_crate_fact_form_validate($form, $form_state) {
+  $values = $form_state['values'];
+  $w  =1;
+
+  $node = new stdClass();
+  $node->type = 'fact';
+  node_object_prepare($node);
+
+  $node->title = $values['title'];
+  $node->language = LANGUAGE_NONE;
+
+  $node->field_fact_content[$node->language][0]['value'] = $values['fact'];
+  $node->field_fact_content[$node->language][0]['format'] = 'editor_html';
+
+  $node->field_fact_inspiration[$node->language][0] = array(
+    'url' => $values['inspiration_link'],
+    'title' => $values['inspiration_title'],
+    'attributes' => array(
+      'rel' => 'external',
+      'target' => '_blank',
+    ),
+    'display_url' => $values['inspiration_link'],
+    'html' => 1,
+  );
+
+  $node->field_fact_source[$node->language][0] = array(
+    'url' => $values['source_link'],
+    'title' => $values['source_title'],
+    'attributes' => array(
+      'rel' => 'external',
+      'target' => '_blank',
+    ),
+    'display_url' => $values['source_link'],
+    'html' => 1,
+  );
+
+  $node->field_fact_author[$node->language][0] = array(
+    'value' => $values['author'],
+    'format' => '',
+    'safe_value' => check_plain($values['author']),
+  );
+
+  $node->field_fact_organization[$node->language][0] = array(
+    'value' => '',
+    'format' => '',
+    'safe_value' => '',
+  );
+
+//  $path = 'content/programmatically_created_node_' . date('YmdHis');
+//  $node->path = array('alias' => $path);
+
+  node_save($node);
+
+  echo t('The fact have been created');
+  exit();
 }
