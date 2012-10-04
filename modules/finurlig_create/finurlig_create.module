@@ -46,6 +46,10 @@ function finurlig_create_fact() {
   exit();
 }
 
+/**
+ * Implements the create fact form, which can be used to load the form into an
+ * iframe on a remote site and thereby create facts (nodes).
+ */
 function finurlig_crate_fact_form() {
   $form = array();
 
@@ -107,18 +111,22 @@ function finurlig_crate_fact_form() {
 
 function finurlig_crate_fact_form_validate($form, $form_state) {
   $values = $form_state['values'];
-  $w  =1;
 
+  // Create a basic node that can hold the fact information submitted in the
+  // form.
   $node = new stdClass();
   $node->type = 'fact';
   node_object_prepare($node);
-
-  $node->title = $values['title'];
   $node->language = LANGUAGE_NONE;
 
+  // Title.
+  $node->title = $values['title'];
+
+  // Content
   $node->field_fact_content[$node->language][0]['value'] = $values['fact'];
   $node->field_fact_content[$node->language][0]['format'] = 'editor_html';
 
+  // Inspiration.
   $node->field_fact_inspiration[$node->language][0] = array(
     'url' => $values['inspiration_link'],
     'title' => $values['inspiration_title'],
@@ -130,6 +138,7 @@ function finurlig_crate_fact_form_validate($form, $form_state) {
     'html' => 1,
   );
 
+  // Source.
   $node->field_fact_source[$node->language][0] = array(
     'url' => $values['source_link'],
     'title' => $values['source_title'],
@@ -141,23 +150,26 @@ function finurlig_crate_fact_form_validate($form, $form_state) {
     'html' => 1,
   );
 
+  // Author.
   $node->field_fact_author[$node->language][0] = array(
     'value' => $values['author'],
     'format' => '',
     'safe_value' => check_plain($values['author']),
   );
 
+  // Organization.
   $node->field_fact_organization[$node->language][0] = array(
     'value' => '',
     'format' => '',
     'safe_value' => '',
   );
 
-//  $path = 'content/programmatically_created_node_' . date('YmdHis');
-//  $node->path = array('alias' => $path);
-
+  // Save the node.
   node_save($node);
 
+  /**
+   * @todo: Return better information that can be used to take action (JSON ?).
+   */
   echo t('The fact have been created');
   exit();
 }
