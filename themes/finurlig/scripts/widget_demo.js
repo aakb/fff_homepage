@@ -1,22 +1,23 @@
 var fffWidgetConfig = [];
 
-(function($) {
+(function ($) {
 
   $(document).ready(function() { 
     $('#generator select[name="type"]').change( function() {
-      refreshWidget();
+      refreshWidget(false);
     });
     $('#generator select[name="style"]').change( function() {
-      refreshWidget();
+      refreshWidget(false);
     });
     $('#generator input[name="color"]').change( function() {
-      refreshWidget();
+      refreshWidget(false);
     });
-    refreshWidget();
+    refreshWidget(true);
   });
 
-  function refreshWidget() {
-    if ($('#widget').html) {
+  function refreshWidget( initial ) {
+    console.log($('#widget').html);
+    if ($('#widget').html && !initial) {
       $('#widget').html('');
       var css = document.getElementsByTagName('link');
       if (css !== undefined && css.length) {

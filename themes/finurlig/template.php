@@ -1,14 +1,26 @@
 <?php
 
+/**
+ * Implements hook_preprocess_page().
+ *
+ * Addes JavaScript for the header widget or the demo script if we are on that
+ * page.
+ */
 function finurlig_preprocess_page(&$variables) {
 	// Assuming that page of type page is always the widget demo page
 	if (isset($variables['node']) && $variables['node']->nid == 1058) {
-	  drupal_add_js(drupal_get_path('theme', 'finurlig') .'/scripts/widget_demo.js', 'file');
+	  drupal_add_js(drupal_get_path('theme', 'finurlig') .'/scripts/widget_demo.min.js', 'file');
 	} else {
 	  drupal_add_js(drupal_get_path('theme', 'finurlig') .'/scripts/fff_widget.js', 'file');
 	}
 }
 
+/**
+ * Implements theme_links().
+ *
+ * Changes the main manu to use anchors, as this is a single page site.
+ *
+ */
 function finurlig_links($variables) {
   $links = $variables['links'];
   $attributes = $variables['attributes'];
