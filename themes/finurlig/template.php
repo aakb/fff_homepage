@@ -26,6 +26,7 @@ function finurlig_links($variables) {
   $attributes = $variables['attributes'];
   $heading = $variables['heading'];
   global $language_url;
+  global $base_url;
   $output = '';
 
   if (count($links) > 0) {
@@ -79,7 +80,7 @@ function finurlig_links($variables) {
          *
          */
         if (isset($attributes['class'][2]) && $attributes['class'][2] == 'main-menu') {
-          $link['href'] = '#' . str_replace('/', '-', $link['href']);
+          $link['href'] = $base_url . '#' . str_replace('/', '-', $link['href']);
           $output .= '<a href="' . $link['href'] . '">' . $link['title'] . '</a>';
         }
         else {
