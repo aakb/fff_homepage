@@ -153,7 +153,7 @@ em, i {
   margin-bottom: 1em;
 }
 
-/* line 66, ../sass/typography.scss */
+/* line 67, ../sass/typography.scss */
 .region-content h3 {
   color: #fd4412;
   font-weight: bold;
@@ -460,13 +460,13 @@ footer .content a:hover {
   width: 50%;
 }
 
-/* line 252, ../sass/finurlig.scss */
+/* line 253, ../sass/finurlig.scss */
 .fff-widget-generator-wrapper {
   width: 45%;
   margin-right: 1em;
 }
 
-/* line 256, ../sass/finurlig.scss */
+/* line 258, ../sass/finurlig.scss */
 hr.divider {
   background: transparent url("../images/dashes.png") repeat-x left bottom;
   height: 5px;
