@@ -1,5 +1,11 @@
 <?php
 
+/**
+ * Implements hook_preprocess_page().
+ *
+ * Addes JavaScript for the header widget or the demo script if we are on that
+ * page.
+ */
 function finurlig_preprocess_page(&$variables) {
 	// Assuming that page of type page is always the widget demo page
 	if (isset($variables['node']) && $variables['node']->nid == 1058) {
@@ -9,6 +15,12 @@ function finurlig_preprocess_page(&$variables) {
 	}
 }
 
+/**
+ * Implements theme_links().
+ *
+ * Changes the main manu to use anchors, as this is a single page site.
+ *
+ */
 function finurlig_links($variables) {
   $links = $variables['links'];
   $attributes = $variables['attributes'];

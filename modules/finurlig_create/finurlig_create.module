@@ -1,0 +1,49 @@
+<?php
+
+
+/**
+ * Implements hook_permission().
+ *
+ * @return type
+ */
+function finurlig_create_permission() {
+  return array(
+    'create finurlig fact' => array(
+      'title' => t('Administer my module'),
+      'description' => t('Perform administration tasks for my module.'),
+    ),
+  );
+}
+
+/**
+ * Implements hook_menu().
+ */
+function finurlig_create_menu() {
+  $items = array();
+
+  // Menu callback used to get the login form as a JSON encoded array.
+  $items['ajax/create/fact'] = array(
+    'title' => 'Create new fact',
+    'description' => 'Create a new fact via AJAX',
+    'page callback' => 'finurlig_create_fact',
+    'page arguments' => array(),
+    'access arguments' => array('create finurlig fact'),
+    'type' => MENU_CALLBACK,
+  );
+
+  return $items;
+}
+
+function finurlig_create_fact() {
+
+  module_load_include('inc', 'node', 'node.pages');
+  $form = node_add('fact');
+
+  $status = array(
+    'status' => 'create',
+    'title' => t('Create new fact'),
+    'content' => render($form),
+  );
+
+  drupal_json_output($status);
+}

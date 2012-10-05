@@ -1,0 +1,7 @@
+name = Finurlig ajax create fact
+description = Exposes the create fact form as JSON callbacks.
+package = "Other"
+core = 7.x
+php = 5.2
+
+files[] = finurlig_create.module
