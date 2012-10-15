@@ -1,0 +1,170 @@
+/* line 17, ../../../../../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+/* line 22, ../../../../../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+html {
+  line-height: 1;
+}
+
+/* line 24, ../../../../../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 26, ../../../../../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 28, ../../../../../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+/* line 30, ../../../../../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none;
+}
+/* line 103, ../../../../../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+/* line 32, ../../../../../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none;
+}
+
+/* line 116, ../../../../../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
+  display: block;
+}
+
+@font-face {
+  font-family: "akaDora";
+  src: url('fonts/akaDora/akaDora.eot');
+  src: url('fonts/akaDora/akaDora.eot?#iefix') format('eot'), url('fonts/akaDora/akaDora.woff') format('woff'), url('fonts/akaDora/akaDora.ttf') format('truetype'), url('fonts/akaDora/akaDora.svg') format('svg');
+  font-weight: "normal";
+  font-style: "normal";
+}
+
+@font-face {
+  font-family: "PTSansRegular";
+  src: url('fonts/ptSans/PTS55F-webfont.eot');
+  src: url('fonts/ptSans/PTS55F-webfont.eot?#iefix') format('eot'), url('fonts/ptSans/PTS55F-webfont.woff') format('woff'), url('fonts/ptSans/PTS55F-webfont.ttf') format('truetype'), url('fonts/ptSans/PTS55F-webfont.svg') format('svg');
+  font-weight: "normal";
+  font-style: "normal";
+}
+
+@font-face {
+  font-family: "mgOpenModerna";
+  src: url('fonts/mgOpenModerna/mgopenmodernabold-webfont.eot');
+  src: url('fonts/mgOpenModerna/mgopenmodernabold-webfont.eot?#iefix') format('eot'), url('fonts/mgOpenModerna/mgopenmodernabold-webfont.woff') format('woff'), url('fonts/mgOpenModerna/mgopenmodernabold-webfont.ttf') format('truetype'), url('fonts/mgOpenModerna/mgopenmodernabold-webfont.svg') format('svg');
+  font-weight: "bold";
+  font-style: "bold";
+}
+
+/* line 9, ../sass/typography.scss */
+body {
+  color: #525252;
+  font-family: PTSansRegular, arial, sans-serif;
+  font-size: 15px;
+}
+
+/* line 15, ../sass/typography.scss */
+b, strong {
+  font-weight: bold;
+}
+
+/* line 19, ../sass/typography.scss */
+em, i {
+  font-style: italic;
+}
+
+/* line 23, ../sass/typography.scss */
+.view-frontpage-steps {
+  line-height: 125%;
+}
+/* line 25, ../sass/typography.scss */
+.view-frontpage-steps h2 {
+  color: #fd4412;
+  font-size: 25px;
+  font-weight: bold;
+  letter-spacing: 0em;
+}
+/* line 31, ../sass/typography.scss */
+.view-frontpage-steps h3 {
+  color: #fd4412;
+  font-weight: bold;
+  letter-spacing: 0em;
+}
+/* line 36, ../sass/typography.scss */
+.view-frontpage-steps .step-text {
+  font-family: akaDora;
+  font-size: 31px;
+  color: #fd7058;
+}
+/* line 42, ../sass/typography.scss */
+.view-frontpage-steps .text dt {
+  color: #fd4412;
+  font-weight: bold;
+}
+/* line 46, ../sass/typography.scss */
+.view-frontpage-steps .text dd {
+  font-style: italic;
+}
+/* line 50, ../sass/typography.scss */
+.view-frontpage-steps .counter {
+  font-family: mgOpenModerna;
+  font-size: 100px;
+  color: #b8b8b8;
+}
+
+/* Widget demo page styles */
+/* line 59, ../sass/typography.scss */
+.region-content h1.title {
+  color: #fd4412;
+  font-size: 25px;
+  font-weight: bold;
+  letter-spacing: 0em;
+  margin-bottom: 1em;
+}
+
+/* line 66, ../sass/typography.scss */
+.region-content h3 {
+  color: #fd4412;
+  font-weight: bold;
+  letter-spacing: 0em;
+  margin-bottom: 1em;
+}
+
+/* line 8, ../sass/finurlig_create.scss */
+.fffw-logo {
+  background: transparent no-repeat url("../images/fff_logo_small.png") 0 0;
+  display: block;
+  height: 40px;
+  width: 85px;
+}

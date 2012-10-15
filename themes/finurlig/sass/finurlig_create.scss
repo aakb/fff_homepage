@@ -1,0 +1,13 @@
+@import "compass/reset";
+@import "compass/css3";
+@import "compass/utilities";
+@import "mixins.scss";
+@import "typography.scss";
+@import "variables.scss";
+
+.fffw-logo {
+  background: transparent no-repeat url('../images/fff_logo_small.png') 0 0;
+  display: block;
+  height: 40px;
+  width: 85px;
+}

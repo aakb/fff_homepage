@@ -9,8 +9,8 @@
 function finurlig_create_permission() {
   return array(
     'create finurlig fact' => array(
-      'title' => t('Administer my module'),
-      'description' => t('Perform administration tasks for my module.'),
+      'title' => t('Create new facts'),
+      'description' => t('Create new feacts from inside the widget.'),
     ),
   );
 }
@@ -35,14 +35,36 @@ function finurlig_create_menu() {
 }
 
 /**
+ * Implements hook_theme().
+ */
+function finurlig_create_theme() {
+  return array(
+    'finurlig_fact_create_page' => array(
+      'variables' => array(
+        'form' => NULL,
+        'css' => NULL,
+      ),
+      'template' => 'templates/finurlig_fact_create_page',
+    ),
+  );
+}
+
+
+/**
  * Callback that returns the create fact node form as JSONP.
  */
 function finurlig_create_fact() {
+  // Get the create fact form.
   $form_id = 'finurlig_crate_fact_form';
-
-  // Get user login form.
   $form = drupal_get_form($form_id);
-  echo render($form);
+
+  // Theme the return page for the iframe.
+  echo theme('finurlig_fact_create_page', array(
+    'form' => render($form),
+    'css' => '/' . drupal_get_path('theme', 'finurlig') . '/css/finurlig_create.css',
+  ));
+
+  // Stop execution of the page.
   exit();
 }
 
@@ -53,20 +75,30 @@ function finurlig_create_fact() {
 function finurlig_crate_fact_form() {
   $form = array();
 
-  $form['title'] = array (
+  $form['content'] = array(
+    '#type' => 'fieldset',
+    '#title' => t('Content'),
+  );
+
+  $form['content']['title'] = array (
     '#type' => 'textfield',
     '#title' => t('Title'),
-    '#attribute' => array('placeholder' => 'test'),
+    '#size' => 40,
+    '#required' => TRUE,
   );
 
-  $form['author'] = array (
+  $form['content']['author'] = array (
     '#type' => 'textfield',
     '#title' => t('Author'),
+    '#size' => 40,
+    '#required' => TRUE,
   );
 
-  $form['fact'] = array(
+  $form['content']['fact'] = array(
     '#type' => 'textarea',
     '#title' => t('Fact'),
+    '#cols' => 42,
+    '#required' => TRUE,
   );
 
   $form['inspiration'] = array(
@@ -77,11 +109,13 @@ function finurlig_crate_fact_form() {
   $form['inspiration']['inspiration_title'] = array(
     '#type' => 'textfield',
     '#title' => t('Title'),
+    '#size' => 40,
   );
 
   $form['inspiration']['inspiration_link'] = array(
     '#type' => 'textfield',
     '#title' => t('link'),
+    '#size' => 40,
   );
 
   $form['source'] = array(
@@ -92,11 +126,18 @@ function finurlig_crate_fact_form() {
   $form['source']['source_title'] = array(
     '#type' => 'textfield',
     '#title' => t('Title'),
+    '#size' => 40,
   );
 
   $form['source']['source_link'] = array(
     '#type' => 'textfield',
     '#title' => t('link'),
+    '#size' => 40,
+  );
+
+  $form['close'] = array(
+    '#type' => 'button',
+    '#value' => t('Close'),
   );
 
   $form['submit'] = array(
