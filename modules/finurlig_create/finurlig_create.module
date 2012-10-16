@@ -42,7 +42,7 @@ function finurlig_create_theme() {
     'finurlig_fact_create_page' => array(
       'variables' => array(
         'form' => NULL,
-        'css' => NULL,
+        'styles' => NULL,
       ),
       'template' => 'templates/finurlig_fact_create_page',
     ),
@@ -61,7 +61,10 @@ function finurlig_create_fact() {
   // Theme the return page for the iframe.
   echo theme('finurlig_fact_create_page', array(
     'form' => render($form),
-    'css' => '/' . drupal_get_path('theme', 'finurlig') . '/css/finurlig_create.css',
+    'styles' => array(
+      '/' . drupal_get_path('theme', 'finurlig') . '/css/finurlig_create.css',
+      '/' . drupal_get_path('module', 'finurlig_create') . '/css/bootstrap.min.css'
+    ),
   ));
 
   // Stop execution of the page.
@@ -132,22 +135,17 @@ function finurlig_crate_fact_form() {
     '#size' => 40,
   );
 
-  $form['close'] = array(
-    '#type' => 'button',
-    '#value' => t('Close'),
-  );
-
   $form['submit'] = array(
     '#type' => 'submit',
     '#value' => t('Create'),
   );
 
-  $form['#validate'][] = 'finurlig_crate_fact_form_validate';
+  $form['#submit'][] = 'finurlig_crate_fact_form_submit';
 
   return $form;
 }
 
-function finurlig_crate_fact_form_validate($form, $form_state) {
+function finurlig_crate_fact_form_submit($form, $form_state) {
   $values = $form_state['values'];
 
   // Create a basic node that can hold the fact information submitted in the

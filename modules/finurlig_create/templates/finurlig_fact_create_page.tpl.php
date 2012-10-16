@@ -17,9 +17,11 @@
   <head profile="http://www.w3.org/1999/xhtml/vocab">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
-    <style type="text/css" media="all">
-      @import url("<?php print $css; ?>");
-    </style>
+      <style type="text/css" media="all">
+        <?php foreach ($styles as $style) : ?>
+        @import url("<?php print $style; ?>");
+        <?php endforeach; ?>
+      </style>
   </head>
   <body>
     <?php print $form; ?>
