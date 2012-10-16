@@ -84,21 +84,18 @@ function finurlig_crate_fact_form() {
     '#type' => 'textfield',
     '#title' => t('Title'),
     '#size' => 40,
-    '#required' => TRUE,
   );
 
   $form['content']['author'] = array (
     '#type' => 'textfield',
     '#title' => t('Author'),
     '#size' => 40,
-    '#required' => TRUE,
   );
 
   $form['content']['fact'] = array(
     '#type' => 'textarea',
     '#title' => t('Fact'),
     '#cols' => 42,
-    '#required' => TRUE,
   );
 
   $form['inspiration'] = array(

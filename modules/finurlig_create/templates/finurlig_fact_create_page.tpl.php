@@ -22,9 +22,6 @@
     </style>
   </head>
   <body>
-    <div>
-      <span class="fffw-logo"></span>
-      <?php print $form; ?>
-    </div>
+    <?php print $form; ?>
   </body>
 </html>
