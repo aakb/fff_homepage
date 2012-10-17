@@ -62,8 +62,8 @@ function finurlig_create_fact() {
   echo theme('finurlig_fact_create_page', array(
     'form' => render($form),
     'styles' => array(
-      '/' . drupal_get_path('theme', 'finurlig') . '/css/finurlig_create.css',
-      '/' . drupal_get_path('module', 'finurlig_create') . '/css/bootstrap.min.css'
+      '/' . drupal_get_path('module', 'finurlig_create') . '/css/bootstrap.css',
+      '/' . drupal_get_path('module', 'finurlig_create') . '/css/fffw_create.css',
     ),
   ));
 
@@ -76,7 +76,13 @@ function finurlig_create_fact() {
  * iframe on a remote site and thereby create facts (nodes).
  */
 function finurlig_crate_fact_form() {
-  $form = array();
+  $form = array(
+    '#attributes' => array(
+      'class' => array(
+        'form-horizontal'
+      ),
+    ),
+  );
 
   $form['content'] = array(
     '#type' => 'fieldset',
@@ -98,7 +104,8 @@ function finurlig_crate_fact_form() {
   $form['content']['fact'] = array(
     '#type' => 'textarea',
     '#title' => t('Fact'),
-    '#cols' => 42,
+    '#cols' => 48,
+    '#rows' => 4,
   );
 
   $form['inspiration'] = array(
@@ -114,7 +121,7 @@ function finurlig_crate_fact_form() {
 
   $form['inspiration']['inspiration_link'] = array(
     '#type' => 'textfield',
-    '#title' => t('link'),
+    '#title' => t('Link'),
     '#size' => 40,
   );
 
@@ -131,13 +138,14 @@ function finurlig_crate_fact_form() {
 
   $form['source']['source_link'] = array(
     '#type' => 'textfield',
-    '#title' => t('link'),
+    '#title' => t('Link'),
     '#size' => 40,
   );
 
   $form['submit'] = array(
     '#type' => 'submit',
     '#value' => t('Create'),
+    '#attributes' => array('class' => array('btn')),
   );
 
   $form['#submit'][] = 'finurlig_crate_fact_form_submit';
