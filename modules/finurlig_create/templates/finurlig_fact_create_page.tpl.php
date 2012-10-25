@@ -24,6 +24,7 @@
       </style>
   </head>
   <body>
+    <?php print theme('status_messages', array('display' => 'error')); ?>
     <?php print $form; ?>
   </body>
 </html>

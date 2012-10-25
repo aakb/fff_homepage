@@ -1,5 +1,8 @@
 <?php
-
+/**
+ * @file
+ *
+ */
 
 /**
  * Implements hook_permission().
@@ -93,12 +96,14 @@ function finurlig_crate_fact_form() {
     '#type' => 'textfield',
     '#title' => t('Title'),
     '#size' => 40,
+    '#required' => TRUE,
   );
 
   $form['content']['author'] = array (
     '#type' => 'textfield',
     '#title' => t('Author'),
     '#size' => 40,
+    '#required' => TRUE,
   );
 
   $form['content']['fact'] = array(
@@ -106,6 +111,7 @@ function finurlig_crate_fact_form() {
     '#title' => t('Fact'),
     '#cols' => 48,
     '#rows' => 4,
+    '#required' => TRUE,
   );
 
   $form['inspiration'] = array(
@@ -117,12 +123,14 @@ function finurlig_crate_fact_form() {
     '#type' => 'textfield',
     '#title' => t('Title'),
     '#size' => 40,
+    '#required' => TRUE,
   );
 
   $form['inspiration']['inspiration_link'] = array(
     '#type' => 'textfield',
     '#title' => t('Link'),
     '#size' => 40,
+    '#required' => TRUE,
   );
 
   $form['source'] = array(
@@ -134,12 +142,14 @@ function finurlig_crate_fact_form() {
     '#type' => 'textfield',
     '#title' => t('Title'),
     '#size' => 40,
+    '#required' => TRUE,
   );
 
   $form['source']['source_link'] = array(
     '#type' => 'textfield',
     '#title' => t('Link'),
     '#size' => 40,
+    '#required' => TRUE,
   );
 
   $form['submit'] = array(
