@@ -1,7 +1,13 @@
 <?php
 /**
  * @file
+ * This module handles creation of facts form anon. users and are used inside
+ * the widget in an iframe. The reason that an iframe is used, is that Drupal
+ * only allows the form to be submitted by "post" and thats not possible in
+ * cross domain applications (jsonp is only over get).
  *
+ * So this module has a over-complicated theme function that build a complete
+ * html page.
  */
 
 /**
@@ -163,6 +169,9 @@ function finurlig_crate_fact_form() {
   return $form;
 }
 
+/**
+ * The forms submit handler.
+ */
 function finurlig_crate_fact_form_submit($form, $form_state) {
   $values = $form_state['values'];
 
@@ -221,9 +230,6 @@ function finurlig_crate_fact_form_submit($form, $form_state) {
   // Save the node.
   node_save($node);
 
-  /**
-   * @todo: Return better information that can be used to take action (JSON ?).
-   */
-  echo t('The fact have been created');
+  echo t('<p>The fact have been created and will now be reviewed by our staff befor comming on-line. Thanks for contributing to finurlig fakta.</p>');
   exit();
 }
