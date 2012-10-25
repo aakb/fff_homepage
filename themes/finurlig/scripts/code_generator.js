@@ -3,7 +3,7 @@
 
   $(document).ready(function() {
     // Outer wrapper.
-    var generatorWrapper = $('<div />', { 'class' : 'fff-widget-generator-wrapper' }).hide();
+    var generatorWrapper = $('<div />', {'class' : 'fff-widget-generator-wrapper'}).hide();
 
     // Form element.
     var generator = $('<form />', {
@@ -106,6 +106,17 @@
                      .append(orange)
                      .append(turquoise));
 
+    generator.append($('<input />', {
+      'type' : 'checkbox',
+      'name' : 'crate_link',
+      'checked' : 'checked',
+      'value' : 'true',
+      'class' : 'create'
+    })).append($('<label />', {
+      'text' : 'Vis linket "Tilføj fakta"',
+      'class' : 'create-label'
+    }));
+
     generator.append($('<label />', {
       'text' : 'Tillad tracking af forbrug (Google Analytices)'
     }).append($('<input />', {
@@ -190,6 +201,7 @@
     var style = $('#fff-widget-generator select[name="style"]').val();
     var color = $('#fff-widget-generator input[@name="color"]:checked').val();
     var tracking = $('#fff-widget-generator .tracking:checked').val();
+    var create = $('#fff-widget-generator .create:checked').val();
 
     // Generate widget configuration.
     var config = "  var fffWidgetConfig = [];\n";
@@ -201,7 +213,7 @@
     config += "      'color' : '"+color+"'\n";
     config += "    },\n";
     config += "    'tracking' : "+(tracking === undefined ? 'false' : 'true')+",\n";
-    config += "    'button' : { 'reload' : true },\n";
+    config += "    'button' : { 'reload' : true, 'create' : "+ (create === undefined  ? 'false' : 'true') +" },\n";
     config += "    'event' : { 'loadComplet' : null }\n";
     config += "  });\n\n";
 
@@ -216,4 +228,3 @@
   }
 
 }(jQuery));
-

@@ -1,5 +1,14 @@
 <?php
-
+/**
+ * @file
+ * This module handles creation of facts form anon. users and are used inside
+ * the widget in an iframe. The reason that an iframe is used, is that Drupal
+ * only allows the form to be submitted by "post" and thats not possible in
+ * cross domain applications (jsonp is only over get).
+ *
+ * So this module has a over-complicated theme function that build a complete
+ * html page.
+ */
 
 /**
  * Implements hook_permission().
@@ -9,8 +18,8 @@
 function finurlig_create_permission() {
   return array(
     'create finurlig fact' => array(
-      'title' => t('Administer my module'),
-      'description' => t('Perform administration tasks for my module.'),
+      'title' => t('Create new facts'),
+      'description' => t('Create new feacts from inside the widget.'),
     ),
   );
 }
@@ -34,16 +43,167 @@ function finurlig_create_menu() {
   return $items;
 }
 
+/**
+ * Implements hook_theme().
+ */
+function finurlig_create_theme() {
+  return array(
+    'finurlig_fact_create_page' => array(
+      'variables' => array(
+        'form' => NULL,
+        'styles' => NULL,
+      ),
+      'template' => 'templates/finurlig_fact_create_page',
+    ),
+  );
+}
+
+
+/**
+ * Callback that returns the create fact node form as JSONP.
+ */
 function finurlig_create_fact() {
+  // Get the create fact form.
+  $form_id = 'finurlig_crate_fact_form';
+  $form = drupal_get_form($form_id);
 
-  module_load_include('inc', 'node', 'node.pages');
-  $form = node_add('fact');
+  // Theme the return page for the iframe.
+  echo theme('finurlig_fact_create_page', array(
+    'form' => render($form),
+    'styles' => array(
+      '/' . drupal_get_path('module', 'finurlig_create') . '/css/bootstrap.css',
+      '/' . drupal_get_path('module', 'finurlig_create') . '/css/fffw_create.css',
+    ),
+  ));
 
-  $status = array(
-    'status' => 'create',
-    'title' => t('Create new fact'),
-    'content' => render($form),
+  // Stop execution of the page.
+  exit();
+}
+
+/**
+ * Implements the create fact form, which can be used to load the form into an
+ * iframe on a remote site and thereby create facts (nodes).
+ */
+function finurlig_crate_fact_form() {
+  $form = array(
+    '#attributes' => array(
+      'class' => array(
+        'form-horizontal'
+      ),
+    ),
   );
 
-  drupal_json_output($status);
+  $form['content']['title'] = array (
+    '#type' => 'textfield',
+    '#title' => t('Title'),
+    '#size' => 40,
+    '#required' => TRUE,
+  );
+
+  $form['content']['author'] = array (
+    '#type' => 'textfield',
+    '#title' => t('Author'),
+    '#size' => 40,
+    '#required' => TRUE,
+  );
+
+  $form['content']['fact'] = array(
+    '#type' => 'textarea',
+    '#title' => t('Fact'),
+    '#cols' => 48,
+    '#rows' => 4,
+    '#required' => TRUE,
+  );
+
+  $form['source']['source_link'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Source link'),
+    '#size' => 40,
+    '#required' => TRUE,
+  );
+
+  $form['inspiration']['inspiration_link'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Inspiration link'),
+    '#size' => 40,
+  );
+
+  $form['disclaimer'] = array(
+    '#markup' => t('<p class="disclaimer">@text</p>', array('@text' => 'We reserve the right to use, modify and distribute all contributions (sources, materials etc..) Contributors receive no royalties or payment of any kind for their fact.')),
+  );
+
+  $form['submit'] = array(
+    '#type' => 'submit',
+    '#value' => t('Create'),
+    '#attributes' => array('class' => array('btn')),
+  );
+
+  $form['#submit'][] = 'finurlig_crate_fact_form_submit';
+
+  return $form;
+}
+
+/**
+ * The forms submit handler.
+ */
+function finurlig_crate_fact_form_submit($form, $form_state) {
+  $values = $form_state['values'];
+
+  // Create a basic node that can hold the fact information submitted in the
+  // form.
+  $node = new stdClass();
+  $node->type = 'fact';
+  node_object_prepare($node);
+  $node->language = LANGUAGE_NONE;
+
+  // Title.
+  $node->title = $values['title'];
+
+  // Content
+  $node->field_fact_content[$node->language][0]['value'] = $values['fact'];
+  $node->field_fact_content[$node->language][0]['format'] = 'editor_html';
+
+  // Inspiration.
+  $node->field_fact_inspiration[$node->language][0] = array(
+    'url' => $values['inspiration_link'],
+    'title' => $values['inspiration_link'],
+    'attributes' => array(
+      'rel' => 'external',
+      'target' => '_blank',
+    ),
+    'display_url' => $values['inspiration_link'],
+    'html' => 1,
+  );
+
+  // Source.
+  $node->field_fact_source[$node->language][0] = array(
+    'url' => $values['source_link'],
+    'title' => $values['source_link'],
+    'attributes' => array(
+      'rel' => 'external',
+      'target' => '_blank',
+    ),
+    'display_url' => $values['source_link'],
+    'html' => 1,
+  );
+
+  // Author.
+  $node->field_fact_author[$node->language][0] = array(
+    'value' => $values['author'],
+    'format' => '',
+    'safe_value' => check_plain($values['author']),
+  );
+
+  // Organization.
+  $node->field_fact_organization[$node->language][0] = array(
+    'value' => '',
+    'format' => '',
+    'safe_value' => '',
+  );
+
+  // Save the node.
+  node_save($node);
+
+  echo t('<p>The fact have been created and will now be reviewed by our staff befor comming on-line. Thanks for contributing to finurlig fakta.</p>');
+  exit();
 }

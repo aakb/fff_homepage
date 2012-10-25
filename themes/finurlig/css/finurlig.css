@@ -1,4 +1,4 @@
-/* line 17, ../../../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 17, ../../../../../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -20,45 +20,45 @@ time, mark, audio, video {
   vertical-align: baseline;
 }
 
-/* line 22, ../../../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 22, ../../../../../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 html {
   line-height: 1;
 }
 
-/* line 24, ../../../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 24, ../../../../../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 ol, ul {
   list-style: none;
 }
 
-/* line 26, ../../../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 26, ../../../../../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
 
-/* line 28, ../../../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 28, ../../../../../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 caption, th, td {
   text-align: left;
   font-weight: normal;
   vertical-align: middle;
 }
 
-/* line 30, ../../../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 30, ../../../../../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 q, blockquote {
   quotes: none;
 }
-/* line 103, ../../../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 103, ../../../../../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 q:before, q:after, blockquote:before, blockquote:after {
   content: "";
   content: none;
 }
 
-/* line 32, ../../../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 32, ../../../../../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 a img {
   border: none;
 }
 
-/* line 116, ../../../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 116, ../../../../../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
   display: block;
 }
@@ -169,19 +169,19 @@ body {
 body a:link, body a:visited, body a:hover, body a:active {
   color: #f13535;
 }
-/* line 18, ../../../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/typography/links/_link-colors.scss */
+/* line 18, ../../../../../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/typography/links/_link-colors.scss */
 body a:link:visited, body a:visited:visited, body a:hover:visited, body a:active:visited {
   color: #f13535;
 }
-/* line 21, ../../../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/typography/links/_link-colors.scss */
+/* line 21, ../../../../../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/typography/links/_link-colors.scss */
 body a:link:focus, body a:visited:focus, body a:hover:focus, body a:active:focus {
   color: #f13535;
 }
-/* line 24, ../../../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/typography/links/_link-colors.scss */
+/* line 24, ../../../../../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/typography/links/_link-colors.scss */
 body a:link:hover, body a:visited:hover, body a:hover:hover, body a:active:hover {
   color: #f13535;
 }
-/* line 27, ../../../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/typography/links/_link-colors.scss */
+/* line 27, ../../../../../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/typography/links/_link-colors.scss */
 body a:link:active, body a:visited:active, body a:hover:active, body a:active:active {
   color: #f13535;
 }
@@ -204,11 +204,11 @@ header .zone-menu-wrapper nav li a:link, header .zone-menu-wrapper nav li a:visi
   color: #888888;
   text-decoration: none;
 }
-/* line 24, ../../../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/typography/links/_link-colors.scss */
+/* line 24, ../../../../../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/typography/links/_link-colors.scss */
 header .zone-menu-wrapper nav li a:link:hover, header .zone-menu-wrapper nav li a:visited:hover, header .zone-menu-wrapper nav li a:hover:hover, header .zone-menu-wrapper nav li a:active:hover {
   color: #a2a2a2;
 }
-/* line 4, ../../../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/typography/links/_hover-link.scss */
+/* line 4, ../../../../../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/typography/links/_hover-link.scss */
 header .zone-menu-wrapper nav li a:link:hover, header .zone-menu-wrapper nav li a:visited:hover, header .zone-menu-wrapper nav li a:hover:hover, header .zone-menu-wrapper nav li a:active:hover {
   text-decoration: underline;
 }
@@ -376,11 +376,11 @@ footer .content a {
   color: #888888;
   text-decoration: none;
 }
-/* line 24, ../../../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/typography/links/_link-colors.scss */
+/* line 24, ../../../../../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/typography/links/_link-colors.scss */
 footer .content a:hover {
   color: #a2a2a2;
 }
-/* line 4, ../../../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/typography/links/_hover-link.scss */
+/* line 4, ../../../../../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/typography/links/_hover-link.scss */
 footer .content a:hover {
   text-decoration: underline;
 }
@@ -422,23 +422,35 @@ footer .content a:hover {
   top: -5px;
   margin-right: 8px;
 }
-/* line 214, ../sass/finurlig.scss */
+/* line 213, ../sass/finurlig.scss */
+.fff-widget-generator-wrapper #fff-widget-generator label.create-label {
+  clear: none;
+  float: left;
+  width: auto;
+  margin-left: 8px;
+  margin-bottom: 8px;
+}
+/* line 221, ../sass/finurlig.scss */
+.fff-widget-generator-wrapper #fff-widget-generator .create {
+  float: left;
+}
+/* line 224, ../sass/finurlig.scss */
 .fff-widget-generator-wrapper #fff-widget-generator fieldset {
   border: 2px groove #F0F0F0;
   margin: 8px;
   margin-left: 0;
 }
-/* line 219, ../sass/finurlig.scss */
+/* line 229, ../sass/finurlig.scss */
 .fff-widget-generator-wrapper #fff-widget-generator fieldset label input {
   float: left;
   margin-right: 8px;
 }
-/* line 225, ../sass/finurlig.scss */
+/* line 236, ../sass/finurlig.scss */
 .fff-widget-generator-wrapper #fff-widget-generator .fff-widget-generator-btn {
   margin-top: 10px;
 }
 
-/* line 232, ../sass/finurlig.scss */
+/* line 243, ../sass/finurlig.scss */
 #fff-widget-code-wrapper #fff-widget-code {
   background-color: #FFF;
   border: 2px groove #F0F0F0;
@@ -448,25 +460,25 @@ footer .content a:hover {
 }
 
 /* Widget demo page styles */
-/* line 243, ../sass/finurlig.scss */
+/* line 254, ../sass/finurlig.scss */
 .region-content {
   padding-top: 60px;
 }
 
-/* line 248, ../sass/finurlig.scss */
+/* line 259, ../sass/finurlig.scss */
 .fff-widget-generator-wrapper,
 .demo-wrapper {
   float: left;
   width: 50%;
 }
 
-/* line 253, ../sass/finurlig.scss */
+/* line 264, ../sass/finurlig.scss */
 .fff-widget-generator-wrapper {
   width: 45%;
   margin-right: 1em;
 }
 
-/* line 258, ../sass/finurlig.scss */
+/* line 269, ../sass/finurlig.scss */
 hr.divider {
   background: transparent url("../images/dashes.png") repeat-x left bottom;
   height: 5px;
