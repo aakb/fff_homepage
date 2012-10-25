@@ -93,11 +93,6 @@ function finurlig_crate_fact_form() {
     ),
   );
 
-  $form['content'] = array(
-    '#type' => 'fieldset',
-    '#title' => t('Content'),
-  );
-
   $form['content']['title'] = array (
     '#type' => 'textfield',
     '#title' => t('Title'),
@@ -120,42 +115,21 @@ function finurlig_crate_fact_form() {
     '#required' => TRUE,
   );
 
-  $form['inspiration'] = array(
-    '#type' => 'fieldset',
-    '#title' => t('Inspiration'),
-  );
-
-  $form['inspiration']['inspiration_title'] = array(
+  $form['source']['source_link'] = array(
     '#type' => 'textfield',
-    '#title' => t('Title'),
+    '#title' => t('Source link'),
     '#size' => 40,
     '#required' => TRUE,
   );
 
   $form['inspiration']['inspiration_link'] = array(
     '#type' => 'textfield',
-    '#title' => t('Link'),
+    '#title' => t('Inspiration link'),
     '#size' => 40,
-    '#required' => TRUE,
   );
 
-  $form['source'] = array(
-    '#type' => 'fieldset',
-    '#title' => t('Source'),
-  );
-
-  $form['source']['source_title'] = array(
-    '#type' => 'textfield',
-    '#title' => t('Title'),
-    '#size' => 40,
-    '#required' => TRUE,
-  );
-
-  $form['source']['source_link'] = array(
-    '#type' => 'textfield',
-    '#title' => t('Link'),
-    '#size' => 40,
-    '#required' => TRUE,
+  $form['disclaimer'] = array(
+    '#markup' => t('<p class="disclaimer">@text</p>', array('@text' => 'We reserve the right to use, modify and distribute all contributions (sources, materials etc..) Contributors receive no royalties or payment of any kind for their fact.')),
   );
 
   $form['submit'] = array(
@@ -192,7 +166,7 @@ function finurlig_crate_fact_form_submit($form, $form_state) {
   // Inspiration.
   $node->field_fact_inspiration[$node->language][0] = array(
     'url' => $values['inspiration_link'],
-    'title' => $values['inspiration_title'],
+    'title' => $values['inspiration_link'],
     'attributes' => array(
       'rel' => 'external',
       'target' => '_blank',
@@ -204,7 +178,7 @@ function finurlig_crate_fact_form_submit($form, $form_state) {
   // Source.
   $node->field_fact_source[$node->language][0] = array(
     'url' => $values['source_link'],
-    'title' => $values['source_title'],
+    'title' => $values['source_link'],
     'attributes' => array(
       'rel' => 'external',
       'target' => '_blank',

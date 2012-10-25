@@ -1,25 +1,20 @@
-.form-type-textfield {
-  margin-bottom: 8px;
-}
-
-.form-type-textfield input {
-  margin-left: 8px;
-}
-
-.form-type-textfield label {
-  display: block;
-  float: left;
-  padding-top: 5px;
-  text-align: right;
-  width: 60px;
-}
-
-#edit-inspiration legend {
-  padding-top: 10px;
+.form-required {
+  color: red;
 }
 
 #edit-submit {
   float: right;
+}
+
+form label {
+  display: block;
+  margin-top: 5px;
+  margin-bottom: 0px;
+}
+
+.disclaimer {
+  color: grey;
+  font-size: 12px;
 }
 
 .btn {
