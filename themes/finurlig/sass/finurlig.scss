@@ -136,12 +136,12 @@ header {
         }
         .text {
           float: left;
-          width: 60.354430379747%;          
+          width: 60.354430379747%;
           ul {
             list-style: disc inside none;
             margin-bottom: 8px;
             li {
-              margin-bottom: 2px;           
+              margin-bottom: 2px;
             }
           }
           dd {
@@ -210,6 +210,16 @@ footer {
         top: -5px;
         margin-right: 8px;
       }
+      &.create-label {
+        clear: none;
+        float: left;
+        width: auto;
+        margin-left: 8px;
+        margin-bottom: 8px;
+      }
+    }
+    .create {
+      float: left;
     }
     fieldset {
       border: 2px groove #F0F0F0;
@@ -222,6 +232,7 @@ footer {
         }
       }
     }
+
     .fff-widget-generator-btn {
       margin-top: 10px;
     }
