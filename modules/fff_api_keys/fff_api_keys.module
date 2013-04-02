@@ -170,13 +170,26 @@ function fff_api_keys_get_key_form_submit($form, &$form_state) {
   $record->fullname = $name;
   $record->mail = $mail;  
   if (drupal_write_record('fff_api_keys', $record)) {
-    $message  = t('Hi %name', array('%name' => $name)) . "\n\n";
-    $message .= t('You have been given the API-key (%api) to access the finurlige fakta web service at http://service.finurligefakta.dk.', array('api' => $api_key));
+    $params = array(
+      'message' => t('Hi %name', array('%name' => $name)) . "\n\n" . t('You have been given the API-key (%api) to access the finurlige fakta web service at http://service.finurligefakta.dk.', array('api' => $api_key)),
+    );
     
     // Sent mail.
-    drupal_mail('fff_api_keys', $mail, 'Requeste API key (Finurlige Fakta)', $message, variable_get('site_mail', 'mkrog@aarhus.dk'));
+    drupal_mail('fff_api_keys', 'notice', $mail, language_default(), $params);
     
     // Set message.
     drupal_set_message(t('An API key have been sent to the e-mail address: %mail.', array('%mail' => $mail)));
+  }
+}
+
+/**
+ * Implements hook_mail().
+ */
+function fff_api_keys_mail($key, &$message, $params) {
+  switch($key) {
+    case 'notice':
+      $message['subject'] = t('Requested API key (Finurlige Fakta)');
+      $message['body'][] = $params['message'];
+      break;
   }
 }
