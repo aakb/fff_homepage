@@ -171,7 +171,7 @@ function fff_api_keys_get_key_form_submit($form, &$form_state) {
   $record->mail = $mail;  
   if (drupal_write_record('fff_api_keys', $record)) {
     $params = array(
-      'message' => t('Hi %name', array('%name' => $name)) . "\n\n" . t('You have been given the API-key (%api) to access the finurlige fakta web service at http://service.finurligefakta.dk.', array('api' => $api_key)),
+      'message' => t('Hi @name', array('@name' => $name)) . "\n\n" . t('You have been given the API-key (@api) to access the finurlige fakta web service at http://service.finurligefakta.dk.', array('@api' => $api_key)),
     );
     
     // Sent mail.
