@@ -1,0 +1,182 @@
+<?php
+/**
+ * @file
+ * 
+ */
+
+/**
+ * Implements hook_permission().
+ */
+function fff_api_keys_permission() {
+  return array(
+    'administer fff api-keys' => array(
+      'title' => t('Administer web-service API keys.'),
+    ),
+  );
+}
+
+/**
+ * Implements hook_menu().
+ */
+function fff_api_keys_menu() {
+  $items = array();
+  
+  $items['admin/config/people/api-keys'] = array(
+    'title' => 'API keys',
+    'description' => 'Administer API keys used to access the FFF web-service.',
+    'page callback' => 'fff_api_keys_admin',
+    'access arguments' => array('administer fff api-keys'),
+  );
+  
+  $items['api-key'] = array(
+    'title' => 'Get key',
+    'description' => 'Get API key to the web-service.',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('fff_api_keys_get_key_form'),
+    'access callback' => TRUE,
+  );
+  
+  return $items;
+}
+
+
+function fff_api_keys_admin() {
+
+
+  $header = array(
+    array('data' => t('Name'), 'field' => 'fullname', 'sort' => 'asc'),
+    array('data' => t('API key'), 'field' => 'apikey'),
+    array('data' => t('E-mail'), 'field' => 'mail'),
+    array('data' => t('Operations'), 'field' => 'operations'),
+  );
+
+  $rows = db_select('fff_api_keys', 'fff')
+    ->fields('fff', array('fullname', 'apikey', 'mail'))
+    ->extend('PagerDefault')
+    ->limit(25)
+    ->extend('TableSort')
+    ->orderByHeader($header)
+    ->execute()
+    ->fetchAll(PDO::FETCH_ASSOC);
+  
+  foreach ($rows as &$row) {
+    $row['operations'] = array();
+  }
+  
+  // Theme the information as a table.
+  $html = theme('table',
+    array(
+      'header' => $header,
+      'rows' => $rows,
+      'sticky' => TRUE,
+      'empty' => t('No API keys found...'),
+    )
+  );
+  
+  $html .= theme('pager', array('tags' => array()));
+
+  return $html;
+}
+
+/**
+ * Menu callback with the api-key request form.
+ * 
+ * @return string 
+ */
+function fff_api_keys_get_key_form() {
+  $form = array();
+
+  $form['text'] = array(
+    '#markup' => t('<p>Fill out the form below and we will mail you an API key that can be used to access the service.</p>'),
+  );
+  
+  $form['fullname'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Your name'),
+    '#required' => TRUE,
+  );
+  
+  $form['mail'] = array(
+    '#type' => 'textfield',
+    '#title' => t('E-mail address'),
+    '#required' => TRUE,
+    '#element_validate' => array(
+      '_fff_api_keys_mail_validate',
+    ),
+  );
+
+  $form['submit'] = array(
+    '#type' => 'submit',
+    '#value' => t('Request API key'),
+  );
+  
+  $form['#submit'][] = 'fff_api_keys_get_key_form_submit';
+  $form['#validate'][] = 'fff_api_keys_get_key_form_validate';
+  
+  drupal_set_title(t('Request API key'));
+  
+  return $form;
+}
+
+/**
+ * Validate e-mail address.
+ * 
+ * @param type $element
+ * @param type $form_state
+ * @param type $form 
+ */
+function _fff_api_keys_mail_validate($element, &$form_state, $form) {
+   if (empty($element['#value'])) {
+     form_error($element, t('This field is required.'));
+   }
+   else if (!valid_email_address($element['#value'])) {
+     form_error($element, t('The mail address is not vailed.'));
+   }
+}
+
+/**
+ * Validate that the e-mail is not already in use.
+ * 
+ * @param type $form
+ * @param type $form_state
+ * @return boolean 
+ */
+function fff_api_keys_get_key_form_validate($form, &$form_state) {
+  $result = db_select('fff_api_keys', 'fff')
+    ->fields('fff', array('mail'))
+    ->condition('mail', $form_state['values']['mail'])
+    ->execute()
+    ->fetchAssoc();
+  if (!empty($result)) {
+    form_set_error('mail', t('The mail address entered is already in use.'));
+    return FALSE;
+  }
+}
+
+/**
+ * Generate and store the API key in the database and send mail with the
+ * information.
+ * 
+ * @param type $form
+ * @param type $form_state 
+ */
+function fff_api_keys_get_key_form_submit($form, &$form_state) {
+  $mail = $form_state['values']['mail'];
+  $name = check_plain($form_state['values']['fullname']);
+  $api_key = md5($name . $mail . drupal_get_hash_salt());
+  
+  $record = new stdClass();
+  $record->apikey = $api_key;
+  $record->fullname = $name;
+  $record->mail = $mail;  
+  if (drupal_write_record('fff_api_keys', $record)) {
+    $message  = t('Hi %name', array('%name' => $name)) . "\n\n";
+    $message .= t('You have been given the API-key (%api) to access the finurlige fakta web service at http://service.finurligefakta.dk.', array('api' => $api_key));
+    
+    // Sent mail.
+    drupal_mail('fff_api_keys', $mail, 'Requeste API key (Finurlige Fakta)', $message, variable_get('site_mail', 'mkrog@aarhus.dk'));
+    
+    // Set message.
+    drupal_set_message(t('An API key have been sent to the e-mail address: %mail.', array('%mail' => $mail)));
+  }
+}
