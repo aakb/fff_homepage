@@ -230,7 +230,7 @@ header .zone-branding-wrapper {
 header .zone-branding-wrapper .site-logo {
   position: absolute;
   top: 65px;
-  left: -7.25532%;
+  left: -7.255319148936%;
 }
 
 /* line 58, ../sass/finurlig.scss */
@@ -436,7 +436,7 @@ footer .content a:hover {
 }
 /* line 224, ../sass/finurlig.scss */
 .fff-widget-generator-wrapper #fff-widget-generator fieldset {
-  border: 2px groove #F0F0F0;
+  border: 2px groove #f0f0f0;
   margin: 8px;
   margin-left: 0;
 }
@@ -453,7 +453,7 @@ footer .content a:hover {
 /* line 243, ../sass/finurlig.scss */
 #fff-widget-code-wrapper #fff-widget-code {
   background-color: #FFF;
-  border: 2px groove #F0F0F0;
+  border: 2px groove #f0f0f0;
   height: 320px;
   overflow: auto;
   margin-bottom: 8px;
@@ -462,7 +462,7 @@ footer .content a:hover {
 /* Widget demo page styles */
 /* line 254, ../sass/finurlig.scss */
 .region-content {
-  padding-top: 60px;
+  padding: 25px 0;
 }
 
 /* line 259, ../sass/finurlig.scss */

@@ -1,0 +1,36 @@
+<?php
+/**
+ * @file
+ * Setup database table to hold API keys.
+ */
+
+function fff_api_keys_schema() {
+  $schema = array();
+  $schema['fff_api_keys'] = array(
+    'description' => 'Holds the available API keys and there status information.',
+    'fields' => array(
+      'apikey' => array(
+        'description' => 'The API key generated.',
+        'type' => 'varchar',
+        'length' => '32',
+        'not null' => TRUE,
+      ),
+      'fullname' => array(
+        'description' => 'The users full name.',
+        'type' => 'text',
+        'not null' => TRUE,
+      ),
+      'mail' => array(
+        'description' => 'The users mail address.',
+        'type' => 'text',
+        'not null' => TRUE,
+      ),
+    ),
+    'indexes' => array(
+      'apikey' => array('apikey'),
+    ),
+    'primary key' => array('apikey'),
+  );
+  
+  return $schema;
+}
