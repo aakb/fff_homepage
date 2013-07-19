@@ -1,0 +1,16 @@
+name = Text formats
+description = Settings for input formats / text styles
+core = 7.x
+package = Core
+php = 5.2.4
+version = unknown
+project = itkore_features
+dependencies[] = ckeditor_link
+dependencies[] = features
+dependencies[] = media
+datestamp = 1338884961
+features[features_api][] = api:2
+features[filter][] = editor_html
+features[filter][] = filtered_html
+features[filter][] = full_html
+features[filter][] = plain_text
