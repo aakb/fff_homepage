@@ -20,7 +20,7 @@ function finurlige_steps_ctools_plugin_api() {
 function finurlige_steps_image_default_styles() {
   $styles = array();
 
-  // Exported image style: screenshot
+  // Exported image style: screenshot.
   $styles['screenshot'] = array(
     'name' => 'screenshot',
     'effects' => array(
@@ -34,10 +34,10 @@ function finurlige_steps_image_default_styles() {
         'module' => 'image',
         'name' => 'image_scale_and_crop',
         'data' => array(
-          'width' => '140',
-          'height' => '140',
+          'width' => 140,
+          'height' => 140,
         ),
-        'weight' => '1',
+        'weight' => 1,
       ),
     ),
   );
