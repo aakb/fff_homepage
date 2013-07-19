@@ -1,0 +1,21 @@
+core = "7.x"
+dependencies[] = "ckeditor_link"
+dependencies[] = "features"
+dependencies[] = "media"
+description = "Settings for input formats / text styles"
+features[filter][] = "editor_html"
+features[filter][] = "filtered_html"
+features[filter][] = "full_html"
+features[filter][] = "plain_text"
+name = "Text formats"
+package = "Core"
+php = "5.2.4"
+project = "itkore_text_formats"
+version = "7.x-1.0-alpha5"
+
+
+; Information added by drush on 2012-06-05
+version = "unknown"
+project = "itkore_features"
+datestamp = "1338884961"
+
