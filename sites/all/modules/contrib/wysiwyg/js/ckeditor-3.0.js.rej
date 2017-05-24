@@ -1,0 +1,13 @@
+--- js/ckeditor-3.0.js	Sat Nov 05 03:59:33 2011
++++ js/ckeditor-3.0.js	Tue Nov 08 09:36:22 2011
+@@ -23,6 +23,10 @@
+         }
+       }
+     }
++    // Register Font styles (versions 3.2.1 and above).
++    if (CKEDITOR.stylesSet && Drupal.settings.wysiwyg.configs.ckeditor[format].stylesSet) {
++      CKEDITOR.stylesSet.add(format, Drupal.settings.wysiwyg.configs.ckeditor[format].stylesSet);
++    }
+   }
+ };
+ 
