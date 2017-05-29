@@ -10,7 +10,7 @@
 function finurlige_steps_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'node-step-field_step_content'
+  // Exported field_instance: 'node-step-field_step_content'.
   $field_instances['node-step-field_step_content'] = array(
     'bundle' => 'step',
     'default_value' => NULL,
@@ -50,7 +50,7 @@ function finurlige_steps_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-step-field_step_ikon'
+  // Exported field_instance: 'node-step-field_step_ikon'.
   $field_instances['node-step-field_step_ikon'] = array(
     'bundle' => 'step',
     'deleted' => 0,
@@ -110,7 +110,7 @@ function finurlige_steps_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-step-field_step_images'
+  // Exported field_instance: 'node-step-field_step_images'.
   $field_instances['node-step-field_step_images'] = array(
     'bundle' => 'step',
     'deleted' => 0,

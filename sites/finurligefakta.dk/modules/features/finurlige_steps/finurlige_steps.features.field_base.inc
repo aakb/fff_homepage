@@ -10,21 +10,13 @@
 function finurlige_steps_field_default_field_bases() {
   $field_bases = array();
 
-  // Exported field_base: 'field_step_content'
+  // Exported field_base: 'field_step_content'.
   $field_bases['field_step_content'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_step_content',
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
     'indexes' => array(
       'format' => array(
         0 => 'format',
@@ -37,21 +29,13 @@ function finurlige_steps_field_default_field_bases() {
     'type' => 'text_long',
   );
 
-  // Exported field_base: 'field_step_ikon'
+  // Exported field_base: 'field_step_ikon'.
   $field_bases['field_step_ikon'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_step_ikon',
-    'foreign keys' => array(
-      'fid' => array(
-        'columns' => array(
-          'fid' => 'fid',
-        ),
-        'table' => 'file_managed',
-      ),
-    ),
     'indexes' => array(
       'fid' => array(
         0 => 'fid',
@@ -67,21 +51,13 @@ function finurlige_steps_field_default_field_bases() {
     'type' => 'image',
   );
 
-  // Exported field_base: 'field_step_images'
+  // Exported field_base: 'field_step_images'.
   $field_bases['field_step_images'] = array(
     'active' => 1,
     'cardinality' => -1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_step_images',
-    'foreign keys' => array(
-      'fid' => array(
-        'columns' => array(
-          'fid' => 'fid',
-        ),
-        'table' => 'file_managed',
-      ),
-    ),
     'indexes' => array(
       'fid' => array(
         0 => 'fid',

@@ -10,21 +10,13 @@
 function fff_content_type_facts_field_default_field_bases() {
   $field_bases = array();
 
-  // Exported field_base: 'field_fact_author'
+  // Exported field_base: 'field_fact_author'.
   $field_bases['field_fact_author'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_fact_author',
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
     'indexes' => array(
       'format' => array(
         0 => 'format',
@@ -39,21 +31,13 @@ function fff_content_type_facts_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_fact_content'
+  // Exported field_base: 'field_fact_content'.
   $field_bases['field_fact_content'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_fact_content',
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
     'indexes' => array(
       'format' => array(
         0 => 'format',
@@ -66,14 +50,13 @@ function fff_content_type_facts_field_default_field_bases() {
     'type' => 'text_long',
   );
 
-  // Exported field_base: 'field_fact_inspiration'
+  // Exported field_base: 'field_fact_inspiration'.
   $field_bases['field_fact_inspiration'] = array(
     'active' => 1,
     'cardinality' => -1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_fact_inspiration',
-    'foreign keys' => array(),
     'indexes' => array(),
     'locked' => 0,
     'module' => 'link',
@@ -96,21 +79,13 @@ function fff_content_type_facts_field_default_field_bases() {
     'type' => 'link_field',
   );
 
-  // Exported field_base: 'field_fact_organization'
+  // Exported field_base: 'field_fact_organization'.
   $field_bases['field_fact_organization'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_fact_organization',
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
     'indexes' => array(
       'format' => array(
         0 => 'format',
@@ -125,14 +100,13 @@ function fff_content_type_facts_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_fact_source'
+  // Exported field_base: 'field_fact_source'.
   $field_bases['field_fact_source'] = array(
     'active' => 1,
     'cardinality' => -1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_fact_source',
-    'foreign keys' => array(),
     'indexes' => array(),
     'locked' => 0,
     'module' => 'link',
@@ -155,21 +129,13 @@ function fff_content_type_facts_field_default_field_bases() {
     'type' => 'link_field',
   );
 
-  // Exported field_base: 'field_fact_tags'
+  // Exported field_base: 'field_fact_tags'.
   $field_bases['field_fact_tags'] = array(
     'active' => 1,
     'cardinality' => -1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_fact_tags',
-    'foreign keys' => array(
-      'tid' => array(
-        'columns' => array(
-          'tid' => 'tid',
-        ),
-        'table' => 'taxonomy_term_data',
-      ),
-    ),
     'indexes' => array(
       'tid' => array(
         0 => 'tid',

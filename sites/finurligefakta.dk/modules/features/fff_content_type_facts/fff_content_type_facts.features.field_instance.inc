@@ -10,7 +10,7 @@
 function fff_content_type_facts_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'node-fact-field_fact_author'
+  // Exported field_instance: 'node-fact-field_fact_author'.
   $field_instances['node-fact-field_fact_author'] = array(
     'bundle' => 'fact',
     'default_value' => NULL,
@@ -50,7 +50,7 @@ function fff_content_type_facts_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-fact-field_fact_content'
+  // Exported field_instance: 'node-fact-field_fact_content'.
   $field_instances['node-fact-field_fact_content'] = array(
     'bundle' => 'fact',
     'default_value' => NULL,
@@ -90,7 +90,7 @@ function fff_content_type_facts_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-fact-field_fact_inspiration'
+  // Exported field_instance: 'node-fact-field_fact_inspiration'.
   $field_instances['node-fact-field_fact_inspiration'] = array(
     'bundle' => 'fact',
     'default_value' => NULL,
@@ -116,6 +116,7 @@ function fff_content_type_facts_field_default_field_instances() {
     'label' => 'Inspiration',
     'required' => 0,
     'settings' => array(
+      'absolute_url' => 1,
       'attributes' => array(
         'class' => '',
         'configurable_title' => 0,
@@ -128,6 +129,7 @@ function fff_content_type_facts_field_default_field_instances() {
       ),
       'enable_tokens' => 1,
       'title' => 'required',
+      'title_label_use_field_label' => FALSE,
       'title_maxlength' => 255,
       'title_value' => '',
       'url' => 'optional',
@@ -143,7 +145,7 @@ function fff_content_type_facts_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-fact-field_fact_organization'
+  // Exported field_instance: 'node-fact-field_fact_organization'.
   $field_instances['node-fact-field_fact_organization'] = array(
     'bundle' => 'fact',
     'default_value' => NULL,
@@ -183,7 +185,7 @@ function fff_content_type_facts_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-fact-field_fact_source'
+  // Exported field_instance: 'node-fact-field_fact_source'.
   $field_instances['node-fact-field_fact_source'] = array(
     'bundle' => 'fact',
     'default_value' => NULL,
@@ -209,6 +211,7 @@ function fff_content_type_facts_field_default_field_instances() {
     'label' => 'Kilde',
     'required' => 0,
     'settings' => array(
+      'absolute_url' => 1,
       'attributes' => array(
         'class' => '',
         'configurable_title' => 0,
@@ -221,6 +224,7 @@ function fff_content_type_facts_field_default_field_instances() {
       ),
       'enable_tokens' => 1,
       'title' => 'required',
+      'title_label_use_field_label' => FALSE,
       'title_maxlength' => 255,
       'title_value' => '',
       'url' => 'optional',
@@ -236,7 +240,7 @@ function fff_content_type_facts_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-fact-field_fact_tags'
+  // Exported field_instance: 'node-fact-field_fact_tags'.
   $field_instances['node-fact-field_fact_tags'] = array(
     'bundle' => 'fact',
     'default_value' => NULL,
