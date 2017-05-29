@@ -1,0 +1,11 @@
+name = Finurlig frontpage steps
+description = View and node queue to create the steps on the front page.
+core = 7.x
+package = Displays
+version = 7.x-1.0-beta1
+project = finurlig_frontpage_steps
+dependencies[] = ctools
+dependencies[] = views
+features[ctools][] = views:views_default:3.0
+features[features_api][] = api:2
+features[views_view][] = frontpage_steps
