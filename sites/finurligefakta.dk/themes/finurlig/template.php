@@ -9,9 +9,9 @@
 function finurlig_preprocess_page(&$variables) {
 	// Assuming that page of type page is always the widget demo page
 	if (isset($variables['node']) && $variables['node']->nid == 1058) {
-	  //drupal_add_js(drupal_get_path('theme', 'finurlig') .'/scripts/widget_demo.min.js', 'file');
+	  drupal_add_js(drupal_get_path('theme', 'finurlig') .'/scripts/widget_demo.min.js', 'file');
 	} else {
-	  //drupal_add_js(drupal_get_path('theme', 'finurlig') .'/scripts/fff_widget.js', 'file');
+	  drupal_add_js(drupal_get_path('theme', 'finurlig') .'/scripts/fff_widget.js', 'file');
 	}
 }
 
@@ -114,9 +114,9 @@ function finurlig_links($variables) {
  * Implements hook_js_alter().
  */
 function finurlig_js_alter(&$javascript) {
-
+  $javascript['sites/all/modules/contrib/google_analytics/googleanalytics.js']['preprocess'] = 0;
+  $javascript['sites/all/modules/contrib/google_analytics/googleanalytics.js']['cache'] = 0;
 }
-
 
 /**
  * Implements hook_preprocess_html_tag().

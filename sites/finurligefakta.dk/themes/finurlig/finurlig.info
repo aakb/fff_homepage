@@ -39,7 +39,7 @@ css[mediaqueries.css][options][weight] = '10'
 ; ----- / SCRIPTS / -----
 
 ; scripts[] = scripts/fff_widget.js //loaded with preprocess_page function in template.php instead
-; scripts[] = scripts/code_generator.min.js
+scripts[] = scripts/code_generator.min.js
 
 ; THEME SETTINGS
 
