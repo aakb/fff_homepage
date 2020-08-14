@@ -111,6 +111,14 @@ function finurlig_links($variables) {
 }
 
 /**
+ * Implements hook_js_alter().
+ */
+function finurlig_js_alter(&$javascript) {
+
+}
+
+
+/**
  * Implements hook_preprocess_html_tag().
  */
 function finurlig_preprocess_html_tag(&$vars) {
