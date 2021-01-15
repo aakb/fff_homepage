@@ -109,3 +109,35 @@ function finurlig_links($variables) {
 
   return $output;
 }
+
+/**
+ * Implements hook_js_alter().
+ */
+function finurlig_js_alter(&$javascript) {
+  $javascript['sites/all/modules/contrib/google_analytics/googleanalytics.js']['preprocess'] = 0;
+  $javascript['sites/all/modules/contrib/google_analytics/googleanalytics.js']['cache'] = 0;
+}
+
+/**
+ * Implements hook_preprocess_html_tag().
+ */
+function finurlig_preprocess_html_tag(&$vars) {
+  // Change html tags to apply cookie information.
+  if ($vars['element']['#tag'] == 'script') {
+    // Add consent check to google analytics.
+    if (strpos($vars['element']['#attributes']['src'], 'google_analytics/googleanalytics.js')) {
+      $src = $vars['element']['#attributes']['src'];
+      $vars['element']['#attributes']['data-consent-src'] = $src;
+      $vars['element']['#attributes']['src'] = '';
+      $vars['element']['#attributes']['data-category-consent'] = 'cookie_cat_statistic';
+    }
+
+    // Add consent check to google analytics inline script.
+    if (strpos($vars['element']['#value'], 'GoogleAnalyticsObject')) {
+      $value = $vars['element']['#value'];
+      $vars['element']['#value'] = "window.addEventListener('CookieInformationConsentGiven', function (event) { 
+if (CookieInformation.getConsentGivenFor('cookie_cat_statistic')) {" . $value . "} 
+}, false);";
+    }
+  }
+}

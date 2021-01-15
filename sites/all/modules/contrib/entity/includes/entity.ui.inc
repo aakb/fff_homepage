@@ -127,8 +127,8 @@ class EntityDefaultUIController {
    * Use per bundle form ids if possible, such that easy per bundle alterations
    * are supported too.
    *
-   * Note that for performance reasons, this method is only invoked for forms,
-   * which receive the entity_type as first argument. Thus any forms added, must
+   * Note that for performance reasons, this method is invoked only for forms
+   * which receive the entity_type as first argument. Thus any forms added must
    * follow that pattern.
    *
    * @see entity_forms()
@@ -645,7 +645,7 @@ function entity_ui_operation_form($form, &$form_state, $entity_type, $entity, $o
  */
 function entity_ui_main_form_defaults($form, &$form_state, $entity = NULL, $op = NULL) {
   // Now equals entity_ui_form_defaults() but is still here to keep backward
-  // compatability.
+  // compatibility.
   return entity_ui_form_defaults($form, $form_state, $form_state['entity_type'], $entity, $op);
 }
 
@@ -725,36 +725,6 @@ function entity_ui_controller_form_submit($form, &$form_state) {
 }
 
 /**
- * Gets the page/menu title for local action operations.
- *
- * @param $op
- *  The current operation. One of 'add' or 'import'.
- * @param $entity_type
- *  The entity type.
- * @param $bundle_name
- *  (Optional) The name of the bundle. May be NULL if the bundle name is not
- *  relevant to the current page. If the entity type has only one bundle, or no
- *  bundles, this will be the same as the entity type.
- */
-function entity_ui_get_action_title($op, $entity_type, $bundle_name = NULL) {
-  $info = entity_get_info($entity_type);
-  switch ($op) {
-    case 'add':
-      if (isset($bundle_name) && $bundle_name != $entity_type) {
-        return t('Add @bundle_name @entity_type', array(
-          '@bundle_name' => drupal_strtolower($info['bundles'][$bundle_name]['label']),
-          '@entity_type' => drupal_strtolower($info['label']),
-        ));
-      }
-      else {
-        return t('Add @entity_type', array('@entity_type' => drupal_strtolower($info['label'])));
-      }
-    case 'import':
-      return t('Import @entity_type', array('@entity_type' => drupal_strtolower($info['label'])));
-  }
-}
-
-/**
  * Submit builder for the main entity form, which extracts the form values and updates the entity.
  *
  * This is a helper function for entities making use of the entity UI
@@ -790,7 +760,7 @@ function entity_ui_validate_machine_name($element, &$form_state) {
 function theme_entity_ui_overview_item($variables) {
   $output = $variables['url'] ? l($variables['label'], $variables['url']['path'], $variables['url']['options']) : check_plain($variables['label']);
   if ($variables['name']) {
-    $output .= ' <small> (' . t('Machine name') . ': ' . check_plain($variables['name']) . ')</small>';
+    $output .= ' <small>(' . t('Machine name') . ': ' . check_plain($variables['name']) . ')</small>';
   }
   return $output;
 }

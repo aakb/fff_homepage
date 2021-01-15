@@ -20,16 +20,16 @@ function entity_metadata_entity_get_properties($entity, array $options, $name, $
  * @see entity_metadata_book_entity_info_alter()
  */
 function entity_metadata_book_get_properties($node, array $options, $name, $entity_type) {
-  if (!isset($node->book['bid'])) {
-    throw new EntityMetadataWrapperException('This node is no book page.');
-  }
   switch ($name) {
     case 'book':
-      return $node->book['bid'];
+      if (isset($node->book['bid'])) {
+        return $node->book['bid'];
+      }
+      return NULL;
 
     case 'book_ancestors':
       $ancestors = array();
-      while (!empty($node->book['plid'])) {
+      while (!empty($node->book['plid']) && $node->book['plid'] != -1) {
         $link = book_link_load($node->book['plid']);
         array_unshift($ancestors, $link['nid']);
         $node = node_load($link['nid']);
@@ -92,6 +92,12 @@ function entity_metadata_comment_get_node_properties($node, array $options, $nam
 
     case 'comment_count_new':
       return comment_num_new($node->nid);
+
+    case 'comments':
+      $select = db_select('comment', 'c')
+        ->fields('c', array('cid'))
+        ->condition('c.nid', $node->nid);
+      return array_keys($select->execute()->fetchAllKeyed(0, 0));
   }
 }
 
@@ -413,7 +419,7 @@ function entity_metadata_language_list() {
   $list = array();
   $list[LANGUAGE_NONE] = t('Language neutral');
   foreach (language_list() as $language) {
-    $list[$language->language] = $language->name;
+    $list[$language->language] = t($language->name);
   }
   return $list;
 }
@@ -485,8 +491,15 @@ function entity_metadata_field_options_list($name, $info) {
       // No data available.
       $entity = NULL;
     }
-    $instance = $wrapper->getBundle() ? field_info_instance($wrapper->type(), $name, $wrapper->getBundle()) : NULL;
-    return (array) module_invoke($field['module'], 'options_list', $field, $instance, $wrapper->type(), $entity);
+
+    // Support translating labels via i18n field.
+    if (module_exists('i18n_field') && ($translate = i18n_field_type_info($field['type'], 'translate_options'))) {
+      return $translate($field);
+    }
+    else {
+      $instance = $wrapper->getBundle() ? field_info_instance($wrapper->type(), $name, $wrapper->getBundle()) : NULL;
+      return (array) module_invoke($field['module'], 'options_list', $field, $instance, $wrapper->type(), $entity);
+    }
   }
 }
 
@@ -657,9 +670,11 @@ function entity_metadata_field_file_validate_item($items, $context) {
 function entity_metadata_no_hook_node_access($op, $node = NULL, $account = NULL) {
   // First deal with the case where a $node is provided.
   if (isset($node)) {
-    if ($op == 'create') {
+    if (empty($node->vid) && in_array($op, array('create', 'update'))) {
+      // This is a new node or the original node.
       if (isset($node->type)) {
-        return node_access($op, $node->type, $account);
+        $op = empty($node->nid) || !empty($node->is_new) ? 'create' : 'update';
+        return node_access($op, $op == 'create' ? $node->type : $node, $account);
       }
       else {
         throw new EntityMalformedException('Permission to create a node was requested but no node type was given.');
@@ -690,13 +705,14 @@ function entity_metadata_no_hook_node_access($op, $node = NULL, $account = NULL)
 /**
  * Access callback for the user entity.
  */
-function entity_metadata_user_access($op, $entity = NULL, $account = NULL, $entity_type) {
+function entity_metadata_user_access($op, $entity = NULL, $account = NULL, $entity_type = NULL) {
   $account = isset($account) ? $account : $GLOBALS['user'];
   // Grant access to the users own user account and to the anonymous one.
-  if (isset($entity) && $op != 'delete' && (($entity->uid == $account->uid && $entity->uid) || (!$entity->uid && $op == 'view'))) {
+  if (isset($entity->uid) && $op != 'delete' && (($entity->uid == $account->uid && $entity->uid) || (!$entity->uid && $op == 'view'))) {
     return TRUE;
   }
-  if (user_access('administer users', $account) || user_access('access user profiles', $account) && $op == 'view' && $entity->status) {
+  if (user_access('administer users', $account)
+    || user_access('access user profiles', $account) && $op == 'view' && (empty($entity) || !empty($entity->status))) {
     return TRUE;
   }
   return FALSE;
@@ -711,7 +727,7 @@ function entity_metadata_user_properties_access($op, $property, $entity = NULL, 
   }
   $account = isset($account) ? $account : $GLOBALS['user'];
   // Flag to indicate if this user entity is the own user account.
-  $is_own_account = isset($entity) && $account->uid == $entity->uid;
+  $is_own_account = isset($entity->uid) && $account->uid == $entity->uid;
   switch ($property) {
     case 'name':
       // Allow view access to anyone with access to the entity.
@@ -781,15 +797,36 @@ function entity_metadata_comment_properties_access($op, $property, $entity = NUL
 /**
  * Access callback for the taxonomy entities.
  */
-function entity_metadata_taxonomy_access($op, $entity = NULL, $account = NULL, $entity_type) {
-  if ($entity_type == 'taxonomy_vocabulary') {
-    return user_access('administer taxonomy', $account);
-  }
-  if (isset($entity) && $op == 'update' && !isset($account) && taxonomy_term_edit_access($entity)) {
+function entity_metadata_taxonomy_access($op, $entity = NULL, $account = NULL, $entity_type = NULL) {
+  // If user has administer taxonomy permission then no further checks.
+  if (user_access('administer taxonomy', $account)) {
     return TRUE;
   }
-  if (user_access('administer taxonomy', $account) || user_access('access content', $account) && $op == 'view') {
-    return TRUE;
+  switch ($op) {
+    case "view":
+      if (user_access('access content', $account)) {
+        return TRUE;
+      }
+      break;
+    case "update":
+      if ($entity_type == 'taxonomy_term') {
+        return user_access("edit terms in $entity->vid", $account);
+      }
+      break;
+    case "create":
+      if ($entity_type == 'taxonomy_term') {
+        // Check for taxonomy_access_fix contrib module which adds additional
+        // permissions to create new terms in a given vocabulary.
+        if (function_exists('taxonomy_access_fix_access')) {
+          return taxonomy_access_fix_access('add terms', $entity->vocabulary_machine_name);
+        }
+      }
+      break;
+    case "delete":
+      if ($entity_type == 'taxonomy_term') {
+        return user_access("delete terms in $entity->vid", $account);
+      }
+      break;
   }
   return FALSE;
 }
@@ -965,10 +1002,17 @@ function entity_metadata_form_comment($comment) {
  * Callback to get the form of a user account.
  */
 function entity_metadata_form_user($account) {
-  // Pre-populate the form-state with the right form include.
+  // If $account->uid is set then we want a user edit form.
+  // Otherwise we want the user register form.
+  if (isset($account->uid)) {
+    $form_id = 'user_profile_form';
+    form_load_include($form_state, 'inc', 'user', 'user.pages');
+  }
+  else {
+    $form_id = 'user_register_form';
+  }
   $form_state['build_info']['args'] = array($account);
-  form_load_include($form_state, 'inc', 'user', 'user.pages');
-  return drupal_build_form('user_profile_form', $form_state);
+  return drupal_build_form($form_id, $form_state);
 }
 
 /**
