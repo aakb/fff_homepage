@@ -41,4 +41,5 @@
 $sites = array (
   'www.finurligefakta.dk' => 'finurligefakta.dk',
   'finurligefakta.vm' => 'finurligefakta.dk',
+  'fff.local.itkdev.dk' => 'finurligefakta.dk',
 );
